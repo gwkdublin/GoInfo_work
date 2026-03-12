@@ -13,16 +13,37 @@ const App: React.FC = () => {
   const [industries, setIndustries] = useState<Industry[]>([]);
   const [isAdminUnlocked, setIsAdminUnlocked] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Load data and auth state from local storage
+  // Load data from public/data.json
   useEffect(() => {
-    const saved = localStorage.getItem('industry_insights_data');
-    if (saved) {
-      setIndustries(JSON.parse(saved));
-    } else {
-      setIndustries(INITIAL_INDUSTRIES);
-      localStorage.setItem('industry_insights_data', JSON.stringify(INITIAL_INDUSTRIES));
-    }
+    const loadData = async () => {
+      try {
+        const response = await fetch('/data.json');
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data) && data.length > 0) {
+            setIndustries(data);
+            setIsLoading(false);
+            return;
+          }
+        }
+      } catch (error) {
+        console.error('Błąd podczas ładowania pliku data.json:', error);
+      }
+      
+      // Fallback to local storage or initial data if fetch fails or file is empty
+      const saved = localStorage.getItem('industry_insights_data');
+      if (saved) {
+        setIndustries(JSON.parse(saved));
+      } else {
+        setIndustries(INITIAL_INDUSTRIES);
+        localStorage.setItem('industry_insights_data', JSON.stringify(INITIAL_INDUSTRIES));
+      }
+      setIsLoading(false);
+    };
+
+    loadData();
 
     const auth = localStorage.getItem('admin_unlocked');
     if (auth === 'true') {
@@ -49,7 +70,11 @@ const App: React.FC = () => {
       isAdminUnlocked={isAdminUnlocked}
       onAdminRequest={() => setIsLoginModalOpen(true)}
     >
-      {view === 'ADVISOR' ? (
+      {isLoading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00915a]"></div>
+        </div>
+      ) : view === 'ADVISOR' ? (
         <AdvisorView industries={industries} />
       ) : (
         <AdminView industries={industries} setIndustries={handleUpdateIndustries} />
