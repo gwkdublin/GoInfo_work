@@ -1,0 +1,204 @@
+[
+  {
+    "id": "1",
+    "pkd": "10.11.Z",
+    "name": "Przetwórstwo mięsa",
+    "description": "Działalność polegająca na uboju zwierząt i przetwarzaniu mięsa na wędliny, konserwy i inne produkty.",
+    "businessModel": "Model oparty na wysokim wolumenie przy relatywnie niskich marżach jednostkowych. Kluczowa jest logistyka i zarządzanie łańcuchem dostaw.",
+    "costDrivers": [
+      "Ceny surowca (żywiec)",
+      "Energia i chłodnictwo",
+      "Koszty logistyki i paliwa",
+      "Wymogi sanitarno-weterynaryjne"
+    ],
+    "revenueDrivers": [
+      "Eksport na rynki UE i Azję",
+      "Marki własne sieci handlowych",
+      "Premiumizacja produktów (BIO, EKO)"
+    ],
+    "keyKPIs": [
+      {
+        "label": "Yield (Wydajność)",
+        "value": "%"
+      },
+      {
+        "label": "Margin per kg",
+        "value": "PLN"
+      },
+      {
+        "label": "Stock turnover",
+        "value": "Dni"
+      }
+    ],
+    "funFacts": [
+      "Polska jest jednym z największych eksporterów drobiu w UE.",
+      "Sektor ten przechodzi obecnie intensywną konsolidację."
+    ],
+    "checklist": [
+      {
+        "id": "c1",
+        "question": "Jaki jest udział eksportu w przychodach?",
+        "isDone": false
+      },
+      {
+        "id": "c2",
+        "question": "Jak zabezpieczają Państwo ceny surowca?",
+        "isDone": false
+      },
+      {
+        "id": "c3",
+        "question": "Czy planowane są inwestycje w automatyzację uboju?",
+        "isDone": false
+      }
+    ],
+    "analyst": {
+      "name": "Adam Nowak",
+      "role": "Starszy Analityk Sektora Agro",
+      "phone": "+48 600 100 200",
+      "email": "adam.nowak@bank.pl",
+      "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=adam.nowak@bank.pl"
+    },
+    "decarbonizationPillars": [
+      {
+        "id": "1773350086392",
+        "name": "Efektywność energetyczna",
+        "description": "Maksymalizacja wysiłków w zakresie poprawy efektywności energetycznej jest w większości branż łatwym do osiągnięcia celem na drodze do osiągnięcia zerowej emisji netto. Jednocześnie ogranicza ona negatywny wpływ na środowisko, pomagając przedsiębiorstwom budować wizerunek nowoczesnych i odpowiedzialnych w oczach klientów.",
+        "sustainablePoints": [
+          {
+            "id": "1773350274589",
+            "text": "Poprawa efektywności energetycznej procesów produkcyjnych prowadząca do 30% redukcji zapotrzebowania na energię pierwotną",
+            "subpoints": []
+          },
+          {
+            "id": "1773350294353",
+            "text": "Kompleksowa renowacja budynków prowadząca do 30% redukcji zapotrzebowania na energię pierwotną",
+            "subpoints": []
+          },
+          {
+            "id": "1773350304004",
+            "text": "Instalacja urządzeń zwiększających efektywność energetyczną budynków zgodnie z taksonomią UE np.",
+            "subpoints": [
+              "dodanie izolacji do istniejących elementów przegród zewnętrznych (tj.: ścian zewnętrznych, dachów, podłóg na gruncie) zgodne z WT2021",
+              "wymiana istniejących okien na nowe o współczynniku przenikania ciepła U < 0,9 W/m2k ; wymiana istniejących drzwi zewnętrznych na nowe o współczynniku przenikania ciepła U < 1,3 w/m2k ; instalacja i wymiana energooszczędnych źródeł światła => pod warunkiem zapewnienia klasy efektywności energetycznej A lub B",
+              "montaż, wymiana, konserwacja i naprawa systemów ogrzewania, wentylacji i klimatyzacji (HVAC) i systemu ogrzewania wody, w tym sprzętu związanego z usługami ciepłowniczymi, na wysoce efektywne technologie => sprzęt musi być w 2 najwyższych klasach efektywności energetycznej"
+            ]
+          },
+          {
+            "id": "1773350771256",
+            "text": "Montaż, konserwacja i naprawa instrumentów i urządzeń do pomiaru, regulacji i kontroli charakterystyki energetycznej budynku, tj montaż:",
+            "subpoints": [
+              "termostatów strefowych, inteligentnych systemów termostatycznych i czujników, w tym czujników ruchu i światła dziennego;",
+              "systemów automatyki i sterowania budynku, systemów zarządzania energią w budynku (BEMS), systemów regulacji oświetlenia i systemów zarządzania energią (EMS);",
+              "inteligentnych liczników w zakresie zużycia gazu, ciepła, chłodzenia i energii elektrycznej;",
+              "elementów elewacyjnych i dachowych z funkcją zacieniania lub regulacji światła słonecznego, w tym elementy wspomagające wzrost roślinności"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1773350844744",
+        "name": "Przejście na paliwa niskoemisyjne",
+        "description": "Większość emisji bezpośrednich sektora przetwórstwa mięsnego wynika z produkcji ciepła i chłodu wykorzystywanego w procesach produkcyjnych. Znaczący wpływ na obniżenie emisji ma zastąpienie źródeł energii wytwarzanej z paliw kopalnych na źródła niskoemisyjne, takie jak biogaz, biomasa, czy przemysłowe pompy ciepła.",
+        "sustainablePoints": [
+          {
+            "id": "1773350868615",
+            "text": "Zaawansowane biopaliwa i biogaz produkowane z surowców wymienionych w załączniku IX dyrektywy (UE) 2018/2021 (RED II) tj:",
+            "subpoints": [
+              "frakcja biomasy ze zmieszanych odpadów komunalnych; bioodpady z gospodarstw domowych; frakcja biomasy z odpadów przemysłowych (nienadająca się do wykorzystania w łańcuchu żywnościowym lub paszowym); słoma; obornik zwierzęcy i osady ściekowe; ścieki z olejarni palmowych i puste kiście owoców palmowych; smoła oleju talowego; surowa gliceryna; wytłoki z winogron i osad winny; łupiny orzechów; łupiny; kolby oczyszczone z ziaren kukurydzy; frakcja biomasy odpadów i pozostałości z leśnictwa i przemysłu związanego z leśnictwem; inny niespożywczy materiał celulozowy, inny materiał lignocelulozowy z wyjątkiem kłód tartacznych i kłód fornirowych; algi, jeśli są uprawiane na lądzie w stawach lub fotobioreaktorach; zużyty olej spożywczy, tłuszcze zwierzęce.",
+              "W celu uniknięcia wątpliwości, z zakresu tego wyłączone są biogaz i biopaliwa produkowane z roślin spożywczych i paszowych.",
+              "„inne niespożywcze materiały celulozowe” obejmują pozostałości rolnicze, a także uprawy energetyczne (takie jak miskant) i uprawy pośrednie, pod warunkiem, że wykorzystanie takich upraw nie powoduje zapotrzebowania na dodatkowe grunty.",
+              "„inne materiały lignocelulozowe z wyjątkiem kłód pił i kłód fornirowych” obejmują papier z recyklingu, drewno celulozowe, pniaki drzew.",
+              "„rośliny spożywcze i paszowe” oznaczają rośliny bogate w skrobię, rośliny cukrowe lub rośliny oleiste produkowane na gruntach rolnych jako główna uprawa wykorzystywana jako żywność lub pasza dla zwierząt, z wyłączeniem pozostałości, odpadów lub materiału lignocelulozowego i upraw pośrednich - pod warunkiem, że wykorzystanie takich upraw pośrednich nie powoduje zapotrzebowania na dodatkowe grunty."
+            ]
+          },
+          {
+            "id": "1773350944156",
+            "text": "Instalacja przemysłowych pomp ciepła.",
+            "subpoints": []
+          }
+        ]
+      },
+      {
+        "id": "1773351486042",
+        "name": "Elektryfikacja procesów produkcyjnych i OZE",
+        "description": "Kluczową dźwignią dekarbonizacyjną sektora jest elektryfikacja procesów produkcyjnych przy jednoczesnej inwestycji w OZE. Odnawialne źródła energii pozwalają na uniezależnienie się od zmiennych cen paliw kopalnych. Jednocześnie jest to skuteczny sposób na wyeliminowanie szkodliwych emisji, co chroni zdrowie publiczne i pomaga w walce z postępującymi zmianami klimatu.",
+        "sustainablePoints": [
+          {
+            "id": "1773351497037",
+            "text": "Instalacja, konserwacja i naprawa urządzeń wykorzystujących energię odnawialną, w tym:",
+            "subpoints": [
+              "systemy fotowoltaiczne i pomocnicze urządzenia techniczne;",
+              "panele słoneczne do podgrzewania wody i pomocniczy sprzęt techniczny;",
+              "turbiny wiatrowe i pomocniczy sprzęt techniczny;",
+              "kolektory słoneczne i pomocniczy sprzęt techniczny;",
+              "urządzenia do magazynowania energii cieplnej lub elektrycznej i pomocniczy sprzęt techniczny;",
+              "wysokowydajne mikroinstalacje kogeneracyjne (kogeneracja ciepła i energii elektrycznej) zasilana energią odnawialną;",
+              "systemy odzyskiwania ciepła."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "pkd": "62.01.Z",
+    "name": "Działalność związana z oprogramowaniem",
+    "description": "Tworzenie i wdrażanie systemów IT, aplikacji mobilnych oraz rozwiązań chmurowych.",
+    "businessModel": "Opiera się na sprzedaży licencji (SaaS) lub rozliczaniu czasu pracy specjalistów (Time & Material / Fixed Price).",
+    "costDrivers": [
+      "Wynagrodzenia deweloperów",
+      "Koszty pozyskania talentów",
+      "Infrastruktura chmurowa (AWS/Azure)",
+      "Szkolenia i certyfikacje"
+    ],
+    "revenueDrivers": [
+      "Abonamenty SaaS",
+      "Usługi wdrożeniowe",
+      "Utrzymanie i wsparcie (Maintenance)"
+    ],
+    "keyKPIs": [
+      {
+        "label": "MRR / ARR",
+        "value": "USD/PLN"
+      },
+      {
+        "label": "Churn Rate",
+        "value": "%"
+      },
+      {
+        "label": "LTV/CAC Ratio",
+        "value": "X"
+      }
+    ],
+    "funFacts": [
+      "Branża IT generuje blisko 8% PKB Polski.",
+      "Ponad 60% polskich firm IT pracuje dla klientów zagranicznych."
+    ],
+    "checklist": [
+      {
+        "id": "c4",
+        "question": "Jaki procent przychodów to dochód powtarzalny (Recurring)?",
+        "isDone": false
+      },
+      {
+        "id": "c5",
+        "question": "Jak wygląda rotacja pracowników w kluczowych zespołach?",
+        "isDone": false
+      },
+      {
+        "id": "c6",
+        "question": "Kto posiada autorskie prawa majątkowe do kluczowego kodu?",
+        "isDone": false
+      }
+    ],
+    "analyst": {
+      "name": "Marta Wiśniewska",
+      "role": "Ekspert ds. Sektora TMT",
+      "phone": "+48 700 300 400",
+      "email": "marta.wisniewska@bank.pl",
+      "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=marta.wisniewska@bank.pl"
+    },
+    "decarbonizationPillars": []
+  }
+]
