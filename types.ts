@@ -3,6 +3,7 @@ export interface ChecklistItem {
   id: string;
   question: string;
   isDone: boolean;
+  category?: 'Biznes' | 'ESG';
 }
 
 export interface Analyst {
@@ -26,6 +27,19 @@ export interface DecarbonizationPillar {
   sustainablePoints: SustainablePoint[];
 }
 
+export interface ESGLimitationPoint {
+  id: string;
+  text: string;
+  subpoints: string[];
+}
+
+export interface ESGLimitation {
+  id: string;
+  name: string;
+  description: string;
+  points: ESGLimitationPoint[];
+}
+
 export interface Industry {
   id: string;
   pkd: string;
@@ -38,7 +52,9 @@ export interface Industry {
   funFacts: string[];
   checklist: ChecklistItem[];
   analyst?: Analyst;
+  esgExpert?: Analyst;
   decarbonizationPillars?: DecarbonizationPillar[];
+  esgLimitations?: ESGLimitation[];
 }
 
 export type AppView = 'ADVISOR' | 'ADMIN';

@@ -29,9 +29,9 @@ export const INITIAL_INDUSTRIES: Industry[] = [
       'Sektor ten przechodzi obecnie intensywną konsolidację.'
     ],
     checklist: [
-      { id: 'c1', question: 'Jaki jest udział eksportu w przychodach?', isDone: false },
-      { id: 'c2', question: 'Jak zabezpieczają Państwo ceny surowca?', isDone: false },
-      { id: 'c3', question: 'Czy planowane są inwestycje w automatyzację uboju?', isDone: false }
+      { id: 'c1', question: 'Jaki jest udział eksportu w przychodach?', isDone: false, category: 'Biznes' },
+      { id: 'c2', question: 'Jak zabezpieczają Państwo ceny surowca?', isDone: false, category: 'Biznes' },
+      { id: 'c3', question: 'Czy planowane są inwestycje w automatyzację uboju?', isDone: false, category: 'ESG' }
     ],
     analyst: {
       name: 'Adam Nowak',
@@ -108,9 +108,9 @@ export const INITIAL_INDUSTRIES: Industry[] = [
       'Ponad 60% polskich firm IT pracuje dla klientów zagranicznych.'
     ],
     checklist: [
-      { id: 'c4', question: 'Jaki procent przychodów to dochód powtarzalny (Recurring)?', isDone: false },
-      { id: 'c5', question: 'Jak wygląda rotacja pracowników w kluczowych zespołach?', isDone: false },
-      { id: 'c6', question: 'Kto posiada autorskie prawa majątkowe do kluczowego kodu?', isDone: false }
+      { id: 'c4', question: 'Jaki procent przychodów to dochód powtarzalny (Recurring)?', isDone: false, category: 'Biznes' },
+      { id: 'c5', question: 'Jak wygląda rotacja pracowników w kluczowych zespołach?', isDone: false, category: 'ESG' },
+      { id: 'c6', question: 'Kto posiada autorskie prawa majątkowe do kluczowego kodu?', isDone: false, category: 'Biznes' }
     ],
     analyst: {
       name: 'Marta Wiśniewska',

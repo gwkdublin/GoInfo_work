@@ -19,7 +19,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/data.json');
+        // Dodajemy timestamp, aby uniknąć cache'owania starego pliku przez przeglądarkę
+        const response = await fetch('/data.json?t=' + new Date().getTime(), { cache: 'no-store' });
         if (response.ok) {
           const data = await response.json();
           if (Array.isArray(data) && data.length > 0) {
@@ -27,6 +28,8 @@ const App: React.FC = () => {
             setIsLoading(false);
             return;
           }
+        } else {
+          console.warn('Nie znaleziono pliku data.json na serwerze lub wystąpił błąd (status: ' + response.status + ').');
         }
       } catch (error) {
         console.error('Błąd podczas ładowania pliku data.json:', error);
@@ -51,9 +54,26 @@ const App: React.FC = () => {
     }
   }, []);
 
-  const handleUpdateIndustries = (updated: Industry[]) => {
+  const handleUpdateIndustries = async (updated: Industry[]) => {
     setIndustries(updated);
     localStorage.setItem('industry_insights_data', JSON.stringify(updated));
+
+    // Zapisz do pliku data.json na serwerze
+    try {
+      const response = await fetch('/api/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updated),
+      });
+      
+      if (!response.ok) {
+        console.error('Nie udało się zapisać zmian do pliku data.json');
+      }
+    } catch (error) {
+      console.error('Błąd podczas zapisywania do pliku data.json:', error);
+    }
   };
 
   const handleUnlockAdmin = () => {

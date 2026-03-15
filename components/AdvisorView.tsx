@@ -62,13 +62,21 @@ const AdvisorView: React.FC<AdvisorViewProps> = ({ industries }) => {
             <div 
               key={ind.id} 
               onClick={() => setSelectedIndustryId(ind.id)}
-              className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#00915a]/50 transition-all cursor-pointer group"
+              className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#00915a]/50 transition-all cursor-pointer group relative"
             >
-              <div className="flex justify-between items-start mb-4">
+              <div className="absolute top-4 right-4">
+                <span className={`text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider ${
+                  ind.esgLimitations && ind.esgLimitations.length > 0
+                    ? 'bg-red-100 text-red-700'
+                    : 'bg-emerald-100 text-emerald-700'
+                }`}>
+                  ESG
+                </span>
+              </div>
+              <div className="flex justify-between items-start mb-4 pr-12">
                 <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-[#00915a] uppercase tracking-wide">
                   PKD {ind.pkd}
                 </span>
-                <svg className="w-5 h-5 text-gray-300 group-hover:text-[#00915a] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">{ind.name}</h3>
               <p className="text-gray-500 text-sm line-clamp-2">{ind.description}</p>

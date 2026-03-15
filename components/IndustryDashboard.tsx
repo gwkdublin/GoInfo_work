@@ -37,6 +37,13 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
     }
   };
 
+  const scrollToEsg = () => {
+    const element = document.getElementById('esg-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const progress = Math.round((checklist.filter(i => i.isDone).length / checklist.length) * 100) || 0;
 
   return (
@@ -68,6 +75,17 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
                   <span>Filary dekarbonizacji</span>
                 </button>
               )}
+              {industry.esgLimitations && industry.esgLimitations.length > 0 && (
+                <button 
+                  onClick={scrollToEsg}
+                  className="flex items-center justify-center space-x-2 bg-red-50 text-red-600 px-4 py-2.5 rounded-xl font-bold text-sm shadow-sm border border-red-100 hover:bg-red-100 active:scale-95 transition-all"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <span>Ograniczenia ESG</span>
+                </button>
+              )}
               <button 
                 onClick={scrollToChecklist}
                 className="flex items-center justify-center space-x-2 bg-[#00915a] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md hover:bg-[#006646] active:scale-95 transition-all animate-pulse-subtle"
@@ -75,7 +93,7 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                 </svg>
-                <span>Przejdź do listy pytań</span>
+                <span>Lista pytań</span>
               </button>
             </div>
           </div>
@@ -152,7 +170,7 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
         </div>
 
         {/* Analyst Contact Card */}
-        {industry.analyst && (
+        {industry.analyst && industry.analyst.name && (
           <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 bg-[#00915a] rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -160,33 +178,85 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
               </div>
               <div>
                 <h4 className="text-gray-900 font-bold leading-tight">{industry.analyst.name}</h4>
-                <p className="text-xs text-gray-500">{industry.analyst.role}</p>
+                <p className="text-xs text-gray-500">{industry.analyst.role || 'Analityk'}</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <a 
-                href={`tel:${industry.analyst.phone}`}
-                className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
-                title="Zadzwoń"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              </a>
-              <a 
-                href={`mailto:${industry.analyst.email}`}
-                className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
-                title="Wyślij email"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              </a>
-              <a 
-                href={industry.analyst.teamsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-50 rounded-xl hover:bg-blue-50 text-gray-600 hover:text-blue-600 transition-colors shadow-sm border border-gray-100"
-                title="Rozpocznij czat Teams"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 13.5h.44a.43.43 0 0 0 .44-.43v-.44a.43.43 0 0 0-.44-.43h-.44a.43.43 0 0 0-.44.43v.44a.43.43 0 0 0 .44.43zM10.5 8h-.44a.43.43 0 0 0-.44.43v.44c0 .24.2.43.44.43h.44a.43.43 0 0 0 .44-.43v-.44c0-.24-.2-.43-.44-.43zM21 7.23V17c0 1.1-.9 2-2 2H7l-4 4V5c0-1.1.9-2 2-2h9.23c-.14.31-.23.65-.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23.14.31.23.65.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23zM9.5 11.5v-3C9.5 7.67 8.83 7 8 7H6c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5zm6.5 2v-3c0-.83-.67-1.5-1.5-1.5h-2c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5z"/></svg>
-              </a>
+              {industry.analyst.phone && (
+                <a 
+                  href={`tel:${industry.analyst.phone}`}
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
+                  title="Zadzwoń"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </a>
+              )}
+              {industry.analyst.email && (
+                <a 
+                  href={`mailto:${industry.analyst.email}`}
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
+                  title="Wyślij email"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </a>
+              )}
+              {industry.analyst.teamsLink && (
+                <a 
+                  href={industry.analyst.teamsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-blue-50 text-gray-600 hover:text-blue-600 transition-colors shadow-sm border border-gray-100"
+                  title="Rozpocznij czat Teams"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 13.5h.44a.43.43 0 0 0 .44-.43v-.44a.43.43 0 0 0-.44-.43h-.44a.43.43 0 0 0-.44.43v.44a.43.43 0 0 0 .44.43zM10.5 8h-.44a.43.43 0 0 0-.44.43v.44c0 .24.2.43.44.43h.44a.43.43 0 0 0 .44-.43v-.44c0-.24-.2-.43-.44-.43zM21 7.23V17c0 1.1-.9 2-2 2H7l-4 4V5c0-1.1.9-2 2-2h9.23c-.14.31-.23.65-.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23.14.31.23.65.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23zM9.5 11.5v-3C9.5 7.67 8.83 7 8 7H6c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5zm6.5 2v-3c0-.83-.67-1.5-1.5-1.5h-2c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5z"/></svg>
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* ESG Expert Contact Card */}
+        {industry.esgExpert && industry.esgExpert.name && (
+          <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 mt-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-lg">
+                {industry.esgExpert.name.charAt(0)}
+              </div>
+              <div>
+                <h4 className="text-gray-900 font-bold leading-tight">{industry.esgExpert.name}</h4>
+                <p className="text-xs text-gray-500">{industry.esgExpert.role || 'Ekspert ESG'}</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              {industry.esgExpert.phone && (
+                <a 
+                  href={`tel:${industry.esgExpert.phone}`}
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
+                  title="Zadzwoń"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                </a>
+              )}
+              {industry.esgExpert.email && (
+                <a 
+                  href={`mailto:${industry.esgExpert.email}`}
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-emerald-50 text-gray-600 hover:text-[#00915a] transition-colors shadow-sm border border-gray-100"
+                  title="Wyślij email"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </a>
+              )}
+              {industry.esgExpert.teamsLink && (
+                <a 
+                  href={industry.esgExpert.teamsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-50 rounded-xl hover:bg-blue-50 text-gray-600 hover:text-blue-600 transition-colors shadow-sm border border-gray-100"
+                  title="Rozpocznij czat Teams"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.5 13.5h.44a.43.43 0 0 0 .44-.43v-.44a.43.43 0 0 0-.44-.43h-.44a.43.43 0 0 0-.44.43v.44a.43.43 0 0 0 .44.43zM10.5 8h-.44a.43.43 0 0 0-.44.43v.44c0 .24.2.43.44.43h.44a.43.43 0 0 0 .44-.43v-.44c0-.24-.2-.43-.44-.43zM21 7.23V17c0 1.1-.9 2-2 2H7l-4 4V5c0-1.1.9-2 2-2h9.23c-.14.31-.23.65-.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23.14.31.23.65.23 1 0 1.1.9 2 2 2 .35 0 .69-.09 1-.23zM9.5 11.5v-3C9.5 7.67 8.83 7 8 7H6c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5zm6.5 2v-3c0-.83-.67-1.5-1.5-1.5h-2c-.83 0-1.5.67-1.5 1.5v3c0 .83.67 1.5 1.5 1.5h2c.83 0 1.5-.67 1.5-1.5z"/></svg>
+                </a>
+              )}
             </div>
           </div>
         )}
@@ -262,6 +332,78 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
             </div>
           </div>
         )}
+
+        {/* ESG Limitations Section */}
+        {industry.esgLimitations && industry.esgLimitations.length > 0 && (
+          <div id="esg-section" className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm relative overflow-hidden mt-8">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="bg-red-100 p-2 rounded-lg flex-shrink-0">
+                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 leading-tight">Ograniczenia ESG</h2>
+                <p className="text-red-600 font-semibold text-sm">Bariery i wyzwania w zrównoważonym rozwoju</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {industry.esgLimitations.map((limitation) => {
+                const isExpanded = expandedPillars[limitation.id];
+                return (
+                  <div key={limitation.id} className="border border-gray-100 rounded-xl bg-gray-50/50 overflow-hidden transition-all duration-300">
+                    <button 
+                      onClick={() => togglePillar(limitation.id)}
+                      className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-100/50 transition-colors"
+                    >
+                      <h3 className="text-lg font-bold text-gray-900">{limitation.name}</h3>
+                      <div className={`flex-shrink-0 ml-4 w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${isExpanded ? 'bg-red-100 text-red-600 rotate-180' : 'bg-white border border-gray-200 text-gray-500'}`}>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </button>
+                    
+                    <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+                      <div className="p-5 pt-0 border-t border-gray-100/50">
+                        <p className="text-gray-600 text-sm mb-6 mt-4">{limitation.description}</p>
+                        
+                        <div className="bg-white rounded-lg p-5 border border-red-100 shadow-sm">
+                          <h4 className="text-sm font-bold text-red-800 uppercase tracking-wider mb-4 flex items-center">
+                            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            Główne wyzwania
+                          </h4>
+                          
+                          <ul className="space-y-4">
+                            {limitation.points.map((point) => (
+                              <li key={point.id} className="text-sm text-gray-800">
+                                <div className="font-semibold flex items-start">
+                                  <span className="text-red-500 mr-2 mt-0.5">•</span>
+                                  {point.text}
+                                </div>
+                                {point.subpoints && point.subpoints.filter(s => s.trim() !== '').length > 0 && (
+                                  <ul className="mt-2 ml-6 space-y-1.5">
+                                    {point.subpoints.filter(s => s.trim() !== '').map((subpoint, idx) => (
+                                      <li key={idx} className="text-gray-600 flex items-start text-xs">
+                                        <span className="text-gray-400 mr-2">-</span>
+                                        {subpoint}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Right Column: Interactive Checklist */}
@@ -285,28 +427,63 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
             </div>
           </div>
           
-          <div className="p-6 space-y-4 max-h-[500px] overflow-y-auto">
+          <div className="p-6 space-y-6 max-h-[600px] overflow-y-auto">
             {checklist.length > 0 ? (
-              checklist.map((item) => (
-                <div 
-                  key={item.id}
-                  onClick={() => toggleCheck(item.id)}
-                  className={`flex items-start p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                    item.isDone 
-                      ? 'bg-emerald-50 border-emerald-100 text-emerald-900' 
-                      : 'bg-white border-gray-50 text-gray-700 hover:border-gray-200'
-                  }`}
-                >
-                  <div className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                    item.isDone ? 'bg-[#00915a] border-[#00915a]' : 'bg-white border-gray-300'
-                  }`}>
-                    {item.isDone && <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>}
+              <>
+                {/* Biznes Section */}
+                {checklist.filter(i => (i.category || 'Biznes') === 'Biznes').length > 0 && (
+                  <div className="space-y-3">
+                    <h4 className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-2 px-1">Biznes</h4>
+                    {checklist.filter(i => (i.category || 'Biznes') === 'Biznes').map((item) => (
+                      <div 
+                        key={item.id}
+                        onClick={() => toggleCheck(item.id)}
+                        className={`flex items-start p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                          item.isDone 
+                            ? 'bg-emerald-50 border-emerald-100 text-emerald-900' 
+                            : 'bg-white border-gray-50 text-gray-700 hover:border-gray-200'
+                        }`}
+                      >
+                        <div className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                          item.isDone ? 'bg-[#00915a] border-[#00915a]' : 'bg-white border-gray-300'
+                        }`}>
+                          {item.isDone && <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>}
+                        </div>
+                        <span className={`ml-3 text-sm font-medium leading-tight ${item.isDone ? 'line-through opacity-70' : ''}`}>
+                          {item.question}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  <span className={`ml-3 text-sm font-medium leading-tight ${item.isDone ? 'line-through opacity-70' : ''}`}>
-                    {item.question}
-                  </span>
-                </div>
-              ))
+                )}
+
+                {/* ESG Section */}
+                {checklist.filter(i => i.category === 'ESG').length > 0 && (
+                  <div className="space-y-3 pt-2">
+                    <h4 className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest mb-2 px-1">ESG</h4>
+                    {checklist.filter(i => i.category === 'ESG').map((item) => (
+                      <div 
+                        key={item.id}
+                        onClick={() => toggleCheck(item.id)}
+                        className={`flex items-start p-4 rounded-xl border-2 transition-all cursor-pointer ${
+                          item.isDone 
+                            ? 'bg-emerald-50 border-emerald-100 text-emerald-900' 
+                            : 'bg-white border-gray-50 text-gray-700 hover:border-gray-200'
+                        }`}
+                      >
+                        <div className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
+                          item.isDone ? 'bg-[#00915a] border-[#00915a]' : 'bg-white border-gray-300'
+                        }`}>
+                          {item.isDone && <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>}
+                        </div>
+                        <span className={`ml-3 text-sm font-medium leading-tight ${item.isDone ? 'line-through opacity-70' : ''}`}>
+                          {item.question}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
             ) : (
               <p className="text-center text-gray-400 py-8 italic">Brak pytań specyficznych dla tej branży.</p>
             )}
