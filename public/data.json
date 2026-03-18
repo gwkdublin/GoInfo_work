@@ -1,1 +1,494 @@
-[]
+[
+  {
+    "id": "1",
+    "pkd": "10.11.Z",
+    "name": "Przetwórstwo mięsa",
+    "description": "Branża przetwórstwa mięsa obejmuje procesy przetwarzania mięsa pochodzącego z chowu zwierząt na mięso spożywcze, w tym ubój, rozbiór, obróbkę, konserwację, pakowanie i dystrybucję produktów mięsnych. ",
+    "businessModel": "Model oparty na wysokim wolumenie przy relatywnie niskich marżach jednostkowych. Kluczowa jest logistyka i zarządzanie łańcuchem dostaw.",
+    "costDrivers": [
+      "Ceny surowca (żywiec)",
+      "Energia i chłodnictwo",
+      "Koszty logistyki i paliwa",
+      "Wymogi sanitarno-weterynaryjne"
+    ],
+    "revenueDrivers": [
+      "Eksport na rynki UE i Azję",
+      "Marki własne sieci handlowych",
+      "Premiumizacja produktów (BIO, EKO)"
+    ],
+    "keyKPIs": [
+      {
+        "label": "Yield (Wydajność)",
+        "value": "%"
+      },
+      {
+        "label": "Margin per kg",
+        "value": "PLN"
+      },
+      {
+        "label": "Stock turnover",
+        "value": "Dni"
+      }
+    ],
+    "funFacts": [
+      "Polska jest jednym z największych eksporterów drobiu w UE.",
+      "Sektor ten przechodzi obecnie intensywną konsolidację."
+    ],
+    "checklist": [
+      {
+        "id": "c1",
+        "question": "Jaki jest udział eksportu w przychodach?",
+        "isDone": false
+      },
+      {
+        "id": "c2",
+        "question": "Jak zabezpieczają Państwo ceny surowca?",
+        "isDone": false
+      },
+      {
+        "id": "c3",
+        "question": "Czy planowane są inwestycje w automatyzację uboju?",
+        "isDone": false
+      },
+      {
+        "id": "1773841185649",
+        "question": "Czy firma mierzy swój ślad węglowy (emisje z zakresu 1, 2 i 3) oraz posiada plan redukcji emisji?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841199032",
+        "question": "Jakie są główne źródła energii?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841212802",
+        "question": "Jak zagdospodarowywane są odpady poubojowe i produkcyjne?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841223253",
+        "question": "Czy firma rozważała inwestycje w instalacje OZE, biogazowanie lub odzysk ciepła z procesów produkcyjnych?",
+        "isDone": false,
+        "category": "ESG"
+      }
+    ],
+    "analyst": {
+      "name": "Grzegorz Kozieja",
+      "role": "Starszy Analityk Sektora Agro",
+      "phone": "+48 515675314",
+      "email": "grzegorz.kozieja@bnpparibas.pl",
+      "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=grzegorz.kozieja@bnpparibas.pl"
+    },
+    "decarbonizationPillars": [
+      {
+        "id": "1773350086392",
+        "name": "Efektywność energetyczna produkcji",
+        "description": "Optymalizacja zużycia energii w procesach ogrzewania / chłodzenia / produkcji, prowadząca do ograniczenia zapotrzebowania na energię pierwotną o 30%.",
+        "sustainablePoints": [
+          {
+            "id": "1773350274589",
+            "text": "Instalacje odzysku ciepła",
+            "subpoints": [
+              "Odzysk ciepła z instalacji chłodniczych lub pary technologicznej / pieców",
+              "Wykorzystanie ciepła do podgrzewania wody technologicznej, mycia i ogrzewania hal"
+            ]
+          },
+          {
+            "id": "1773350294353",
+            "text": "Modernizacja chłodnictwa",
+            "subpoints": [
+              "Wymiana sprężarek na wysokosprawne",
+              "Przejście na naturalne czynniki (amoniak, CO2)",
+              "Optymalizacja pracy instalacji (automatyka, sterowanie)."
+            ]
+          },
+          {
+            "id": "1773841845607",
+            "text": "Efektywność zużycia wody",
+            "subpoints": [
+              "Systemy \"Clean-in-place\" o wyższej efektywności",
+              "Recyrkulacja wody",
+              "Optymalizacja temperatury procesów"
+            ]
+          },
+          {
+            "id": "1773841868904",
+            "text": "Modernizacja linii produkcyjnych",
+            "subpoints": [
+              "Automatyzacja procesów",
+              "Wymiana maszyn na bardziej efektywne energetycznie"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1773350844744",
+        "name": "Przejście na paliwa niskoemisyjne / OZE",
+        "description": "Kluczową dźwignią dekarbonizacyjną sektora jest elektryfikacja procesów produkcyjnych przy jednoczesnej inwestycji w OZE",
+        "sustainablePoints": [
+          {
+            "id": "1773350868615",
+            "text": "Biogazownie",
+            "subpoints": [
+              "Wykorzystanie odpadów zwierzęcych do produkcji energii"
+            ]
+          },
+          {
+            "id": "1773841920758",
+            "text": "Kotły na biomasę",
+            "subpoints": [
+              "Zastąpienie paliw kopalnych kotłami na biomasę"
+            ]
+          },
+          {
+            "id": "1773841933540",
+            "text": "Przemysłowe pompy ciepła",
+            "subpoints": []
+          },
+          {
+            "id": "1773841941482",
+            "text": "Instalacje energii odnawialnej",
+            "subpoints": [
+              "Panele fotowoltaiczne",
+              "Turbiny wiatrowe",
+              "Magazyny energii"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1773351486042",
+        "name": "Termomodernizacja budynków",
+        "description": "Optymalizacja zużycia energii elektrycznej i cieplnej w budynkach",
+        "sustainablePoints": [
+          {
+            "id": "1773351497037",
+            "text": "Instalacja urządzeń zwiększających efektywność energetyczną ",
+            "subpoints": [
+              "Wymiana drzwi i okien",
+              "Ocieplenie przegród zewnętrznych",
+              "Wymiana systemów ogrzewania, wentylacji i klimatyzacji na wysoce energetyczne"
+            ]
+          },
+          {
+            "id": "1773842001180",
+            "text": "Instalacja urządzeń do pomiaru, regulacji i kontroli charakterystyki energetycznej budynku",
+            "subpoints": [
+              "Montaż termostatów strefowych i czujników, w tym czujników ruchu i światła dziennego",
+              "Montaż systemów automatyki i sterowania budynku",
+              "Montaż\tinteligentnych liczników w zakresie zużycia gazu, ciepła, chłodzenia i energii elektrycznej;"
+            ]
+          },
+          {
+            "id": "1773842051533",
+            "text": "Kompleksowa renowacja budynku",
+            "subpoints": [
+              "Renowacja prowadząca do ograniczenia zapotrzebowania na energię pierwotną o 30%"
+            ]
+          }
+        ]
+      }
+    ],
+    "esgExpert": {
+      "name": "Anna Nowak",
+      "role": "Ekspert ESG",
+      "phone": "444 555 666",
+      "email": "kamila.michowska@bank.pl",
+      "teamsLink": ""
+    },
+    "esgLimitations": [
+      {
+        "id": "1773596689353",
+        "name": "Polityka sektorowa ESG",
+        "description": "Klient musi spełniać kryteria obowiązkowe polityki sektorowej ESG",
+        "points": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "pkd": "62.01.Z",
+    "name": "Działalność związana z oprogramowaniem",
+    "description": "Tworzenie i wdrażanie systemów IT, aplikacji mobilnych oraz rozwiązań chmurowych.",
+    "businessModel": "Opiera się na sprzedaży licencji (SaaS) lub rozliczaniu czasu pracy specjalistów (Time & Material / Fixed Price).",
+    "costDrivers": [
+      "Wynagrodzenia deweloperów",
+      "Koszty pozyskania talentów",
+      "Infrastruktura chmurowa (AWS/Azure)",
+      "Szkolenia i certyfikacje"
+    ],
+    "revenueDrivers": [
+      "Abonamenty SaaS",
+      "Usługi wdrożeniowe",
+      "Utrzymanie i wsparcie (Maintenance)"
+    ],
+    "keyKPIs": [
+      {
+        "label": "MRR / ARR",
+        "value": "USD/PLN"
+      },
+      {
+        "label": "Churn Rate",
+        "value": "%"
+      },
+      {
+        "label": "LTV/CAC Ratio",
+        "value": "X"
+      }
+    ],
+    "funFacts": [
+      "Branża IT generuje blisko 8% PKB Polski.",
+      "Ponad 60% polskich firm IT pracuje dla klientów zagranicznych."
+    ],
+    "checklist": [
+      {
+        "id": "c4",
+        "question": "Jaki procent przychodów to dochód powtarzalny (Recurring)?",
+        "isDone": false
+      },
+      {
+        "id": "c5",
+        "question": "Jak wygląda rotacja pracowników w kluczowych zespołach?",
+        "isDone": false
+      },
+      {
+        "id": "c6",
+        "question": "Kto posiada autorskie prawa majątkowe do kluczowego kodu?",
+        "isDone": false
+      }
+    ],
+    "analyst": {
+      "name": "Marta Nowak",
+      "role": "Ekspert ds. Sektora TMT",
+      "phone": "+48 700 300 400",
+      "email": "marta.wisniewska@bank.pl",
+      "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=marta.wisniewska@bank.pl"
+    },
+    "decarbonizationPillars": [],
+    "esgExpert": {
+      "name": "",
+      "role": "",
+      "phone": "",
+      "email": "",
+      "teamsLink": ""
+    },
+    "esgLimitations": []
+  },
+  {
+    "pkd": "16.21.Z",
+    "name": "Produkcja arkuszy fornirowych i płyt wykonanych na bazie drewna",
+    "description": "Działalność polegająca na produkcji arkuszy fornirowych i płyt wykonanych na bazie drewna. Działalność obejmuje wytwarzanie cienkich arkuszy drewna do oklejania, sklejki, płyt wiórowych, pilśniowych oraz płyt o wiórach zorientowanych (OSB), często wygładzanych, barwionych, powlekanych lub impregnowanych.",
+    "businessModel": "Model produkcyjny o dużej skali (B2B), silnie kapitałochłonny, oparty na długofalowych kontraktach z producentami mebli oraz sieciami DIY. Rentowność zależy od efektu skali oraz optymalizacji kosztów logistyki i surowców chemicznych (żywice, kleje).",
+    "costDrivers": [
+      "Ceny drewna okrągłego (głównie system sprzedaży Lasów Państwowych)",
+      "Energia elektryczna i gaz (procesy prasowania i suszenia)",
+      "Surowce chemiczne (żywice mocznikowo-formaldehydowe, kleje)",
+      "Koszty transportu i logistyki (wysoka waga i objętość produktów)",
+      "Koszty certyfikacji środowiskowej (FSC, PEFC)"
+    ],
+    "revenueDrivers": [
+      "Popyt na polskie meble na rynkach zagranicznych (głównie Niemcy, Francja)",
+      "Liczba oddanych mieszkań i dynamika w budownictwie",
+      "Kursy walut (PLN/EUR) wpływające na konkurencyjność eksportu",
+      "Nowoczesne trendy w designie wnętrz (popyt na forniry i dekory)",
+      "Sprzedaż produktów specjalistycznych (płyty trudnopalne, wodoodporne)"
+    ],
+    "keyKPIs": [
+      {
+        "label": "Marża EBITDA",
+        "value": "Typowo w przedziale 8-14% w zależności od nowoczesności parku maszynowego"
+      },
+      {
+        "label": "Wskaźnik dźwigni finansowej (Net Debt/EBITDA)",
+        "value": "Istotny ze względu na wysokie nakłady inwestycyjne na linie produkcyjne"
+      },
+      {
+        "label": "Efektywność wykorzystania surowca",
+        "value": "Stosunek objętości gotowego wyrobu do zużytego drewna (tzw. wydajność materiałowa)"
+      },
+      {
+        "label": "Energy Intensity Index",
+        "value": "Udział kosztów energii w całkowitych kosztach operacyjnych"
+      }
+    ],
+    "funFacts": [
+      "Polska jest jednym z trzech największych producentów płyt drewnopochodnych w Europie.",
+      "Nowoczesna linia do produkcji płyt MDF to inwestycja rzędu 200-400 milionów złotych.",
+      "Polska branża płytowa jest jednym z największych recyklerów drewna w kraju (wykorzystanie drewna poużytkowego)."
+    ],
+    "checklist": [
+      {
+        "id": "gen-1773841270873-0",
+        "question": "Jaki jest udział kosztów energii w strukturze kosztów i czy firma posiada zabezpieczenia cen (hedging)?",
+        "isDone": false
+      },
+      {
+        "id": "gen-1773841270873-1",
+        "question": "Jak wygląda struktura dostawców surowca drzewnego (zależność od Lasów Państwowych vs. import)?",
+        "isDone": false
+      },
+      {
+        "id": "gen-1773841270873-2",
+        "question": "Czy firma posiada aktualne certyfikaty FSC/PEFC, bez których eksport do dużych sieci jest niemożliwy?",
+        "isDone": false
+      },
+      {
+        "id": "gen-1773841270873-3",
+        "question": "Jaki jest wiek parku maszynowego i planowane nakłady odtworzeniowe w najbliższych 3 latach?",
+        "isDone": false
+      },
+      {
+        "id": "gen-1773841270873-4",
+        "question": "Jaka jest koncentracja odbiorców (czy jeden klient generuje ponad 20% przychodów)?",
+        "isDone": false
+      },
+      {
+        "id": "gen-1773841270873-5",
+        "question": "W jaki sposób firma reaguje na cykliczne spowolnienia w branży meblarskiej?",
+        "isDone": false
+      },
+      {
+        "id": "1773841373694",
+        "question": "Czy firma mierzy swój ślad węglowy (emisje z zakresu 1, 2 i 3) oraz posiada plan redukcji emisji?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841386149",
+        "question": "Jakie są główne źródła energii?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841393544",
+        "question": "Czy firma odzyskuje ciepło z procesów?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841400848",
+        "question": "Jaki jest udział materiałów z certyfikatem FSC w strukturze zakupów?",
+        "isDone": false,
+        "category": "ESG"
+      },
+      {
+        "id": "1773841411956",
+        "question": "Jaki procent wykorzystywanych materiałów drewnianych to odpady?",
+        "isDone": false,
+        "category": "ESG"
+      }
+    ],
+    "analyst": {
+      "name": "Jan Kowalski",
+      "role": "Ekspert Sektorowy",
+      "phone": "111 222 333",
+      "email": "jan.kowalski@bank.pl",
+      "teamsLink": ""
+    },
+    "esgExpert": {
+      "name": "Anna Nowak",
+      "role": "Ekspert ESG",
+      "phone": "987654321",
+      "email": "anna.nowak@bank.pl",
+      "teamsLink": ""
+    },
+    "decarbonizationPillars": [
+      {
+        "id": "1773841511710",
+        "name": "Efektywność energetyczna produkcji",
+        "description": "Optymalizacja zużycia energii w procesach ogrzewania / chłodzenia / produkcji, prowadząca do ograniczenia zapotrzebowania na energię pierwotną o 30%.",
+        "sustainablePoints": [
+          {
+            "id": "1773841526957",
+            "text": "Modernizacja suszarni i odzysk ciepła",
+            "subpoints": [
+              "Inwestycje w suszarnie o wysokiej sprawności",
+              "Odzysk ciepła ze spalin i powietrza wylotowego"
+            ]
+          },
+          {
+            "id": "1773841550822",
+            "text": "Ograniczanie strat ciepła",
+            "subpoints": [
+              "Izolacja instalacji",
+              "Redukcja nadmiarowej wentylacji"
+            ]
+          },
+          {
+            "id": "1773841576890",
+            "text": "Optymalizacja i automatyzacja procesów produkcyjnych",
+            "subpoints": [
+              "Wymiana napędów na wysokosprawne",
+              "Instalacja systemów EMS do monitoringu zużycia energii"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1773841600715",
+        "name": "Przejście na paliwa niskoemisyjne / OZE",
+        "description": "Kluczową dźwignią dekarbonizacyjną sektora jest elektryfikacja procesów produkcyjnych przy jednoczesnej inwestycji w OZE",
+        "sustainablePoints": [
+          {
+            "id": "1773841613764",
+            "text": "Kotły ma biomasę",
+            "subpoints": [
+              "Instalacje CHP zasilane na biomasę"
+            ]
+          },
+          {
+            "id": "1773841626417",
+            "text": "Instalacje energii odnawialnej",
+            "subpoints": [
+              "Panele fotowoltaiczne",
+              "Turbiny wiatrowe",
+              "Magazyny energii"
+            ]
+          },
+          {
+            "id": "1773841647066",
+            "text": "Przemysłowe pompy ciepła",
+            "subpoints": []
+          }
+        ]
+      },
+      {
+        "id": "1773841661552",
+        "name": "Efektywność energetyczna budynków ",
+        "description": "Optymalizacja zużycia energii elektrycznej i cieplnej w budynkach",
+        "sustainablePoints": [
+          {
+            "id": "1773841675559",
+            "text": "Instalacja urządzeń zwiększających efektywność energetyczną ",
+            "subpoints": [
+              "Wymiana drzwi i okien",
+              "Ocieplenie przegród zewnętrznych",
+              "Wymiana systemów ogrzewania, wentylacji i klimatyzacji na wysoce energetyczne"
+            ]
+          },
+          {
+            "id": "1773841702448",
+            "text": "Instalacja urządzeń do pomiaru, regulacji i kontroli charakterystyki energetycznej budynku",
+            "subpoints": [
+              "Montaż termostatów strefowych i czujników, w tym czujników ruchu i światła dziennego",
+              "Montaż systemów automatyki i sterowania budynku",
+              "Montaż\tinteligentnych liczników w zakresie zużycia gazu, ciepła, chłodzenia i energii elektrycznej"
+            ]
+          },
+          {
+            "id": "1773841743137",
+            "text": "Kompleksowa renowacja budynku",
+            "subpoints": [
+              "Renowacja prowadząca do ograniczenia zapotrzebowania na energię pierwotną o 30%"
+            ]
+          }
+        ]
+      }
+    ],
+    "esgLimitations": [],
+    "id": "1773841421058"
+  }
+]
