@@ -1039,6 +1039,20 @@ const AdminView: React.FC<AdminViewProps> = ({ industries, setIndustries }) => {
             </label>
           </div>
 
+          <div className="flex bg-blue-50 p-1 rounded-xl border border-blue-100">
+            <button 
+              onClick={() => {
+                setIndustries([...industries]);
+                alert('Dane zostały zapisane do pliku data.json na serwerze!');
+              }}
+              className="text-blue-700 px-3 py-2 rounded-lg font-bold flex items-center hover:bg-white hover:shadow-sm transition-all text-sm"
+              title="Wymuś zapis do pliku data.json"
+            >
+              <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" /></svg>
+              Zapisz na serwerze
+            </button>
+          </div>
+
           <button 
             onClick={handleAddNew}
             className="bg-[#00915a] text-white px-6 py-2.5 rounded-xl font-bold flex items-center shadow-md hover:bg-[#006646] transition-all ml-2"

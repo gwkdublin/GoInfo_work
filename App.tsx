@@ -15,6 +15,28 @@ const App: React.FC = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const handleUpdateIndustries = async (updated: Industry[]) => {
+    setIndustries(updated);
+    localStorage.setItem('industry_insights_data', JSON.stringify(updated));
+
+    // Zapisz do pliku data.json na serwerze
+    try {
+      const response = await fetch('/api/data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updated),
+      });
+      
+      if (!response.ok) {
+        console.error('Nie udało się zapisać zmian do pliku data.json');
+      }
+    } catch (error) {
+      console.error('Błąd podczas zapisywania do pliku data.json:', error);
+    }
+  };
+
   // Load data from public/data.json
   useEffect(() => {
     const loadData = async () => {
@@ -38,10 +60,9 @@ const App: React.FC = () => {
       // Fallback to local storage or initial data if fetch fails or file is empty
       const saved = localStorage.getItem('industry_insights_data');
       if (saved) {
-        setIndustries(JSON.parse(saved));
+        handleUpdateIndustries(JSON.parse(saved));
       } else {
-        setIndustries(INITIAL_INDUSTRIES);
-        localStorage.setItem('industry_insights_data', JSON.stringify(INITIAL_INDUSTRIES));
+        handleUpdateIndustries(INITIAL_INDUSTRIES);
       }
       setIsLoading(false);
     };
@@ -53,28 +74,6 @@ const App: React.FC = () => {
       setIsAdminUnlocked(true);
     }
   }, []);
-
-  const handleUpdateIndustries = async (updated: Industry[]) => {
-    setIndustries(updated);
-    localStorage.setItem('industry_insights_data', JSON.stringify(updated));
-
-    // Zapisz do pliku data.json na serwerze
-    try {
-      const response = await fetch('/api/data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updated),
-      });
-      
-      if (!response.ok) {
-        console.error('Nie udało się zapisać zmian do pliku data.json');
-      }
-    } catch (error) {
-      console.error('Błąd podczas zapisywania do pliku data.json:', error);
-    }
-  };
 
   const handleUnlockAdmin = () => {
     setIsAdminUnlocked(true);
