@@ -8,9 +8,10 @@ interface LayoutProps {
   setView: (view: AppView) => void;
   isAdminUnlocked: boolean;
   onAdminRequest: () => void;
+  onHomeClick?: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, currentView, setView, isAdminUnlocked, onAdminRequest }) => {
+const Layout: React.FC<LayoutProps> = ({ children, currentView, setView, isAdminUnlocked, onAdminRequest, onHomeClick }) => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
@@ -18,13 +19,26 @@ const Layout: React.FC<LayoutProps> = ({ children, currentView, setView, isAdmin
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="bg-white border-2 border-[#00915a] w-10 h-10 flex items-center justify-center rounded shadow-sm">
-                 <span className="text-[#00915a] font-bold text-xl tracking-tighter">CB</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-extrabold text-gray-900 leading-tight">CarbonBiz</h1>
-                <p className="text-[10px] text-[#00915a] font-bold tracking-[0.2em] uppercase">Business & Decarbonization</p>
-              </div>
+              <button 
+                onClick={onHomeClick}
+                className="flex items-center space-x-3 text-left group"
+              >
+                <div className="bg-white border-2 border-[#00915a] w-10 h-10 flex items-center justify-center rounded shadow-sm group-hover:bg-emerald-50 transition-colors">
+                   <span className="text-[#00915a] font-bold text-xl tracking-tighter">CB</span>
+                </div>
+                <div>
+                  <h1 className="text-xl font-extrabold text-gray-900 leading-tight group-hover:text-[#00915a] transition-colors">CarbonBiz</h1>
+                  <p className="text-[10px] text-[#00915a] font-bold tracking-[0.2em] uppercase">Business & Decarbonization</p>
+                  {onHomeClick && (
+                    <div className="text-xs text-gray-500 hover:text-[#00915a] font-medium mt-0.5 flex items-center transition-colors">
+                      <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                      </svg>
+                      Wybór trybu pracy
+                    </div>
+                  )}
+                </div>
+              </button>
             </div>
             
             <nav className="flex space-x-1 bg-gray-100 p-1 rounded-lg">

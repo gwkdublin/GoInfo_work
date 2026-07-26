@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { Industry } from '../types';
+import SustainableFinanceSection from './SustainableFinanceSection';
+import PdfExportFooter from './PdfExportFooter';
 
 interface IndustryDashboardProps {
   industry: Industry;
@@ -44,11 +46,19 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
     }
   };
 
+  const scrollToSustainableFinance = () => {
+    const element = document.getElementById('zrownowazone-finansowanie');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const progress = Math.round((checklist.filter(i => i.isDone).length / checklist.length) * 100) || 0;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pb-12">
-      {/* Left Column: Knowledge Base */}
+    <div id="industry-dashboard-screen" className="space-y-8 pb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column: Knowledge Base */}
       <div className="lg:col-span-2 space-y-6">
         <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
@@ -86,6 +96,15 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
                   <span>Ograniczenia ESG</span>
                 </button>
               )}
+              <button 
+                onClick={scrollToSustainableFinance}
+                className="flex items-center justify-center space-x-2 bg-emerald-100 text-[#00915a] px-4 py-2.5 rounded-xl font-bold text-sm shadow-sm border border-emerald-200 hover:bg-emerald-200 active:scale-95 transition-all"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Finansowanie Zrównoważone</span>
+              </button>
               <button 
                 onClick={scrollToChecklist}
                 className="flex items-center justify-center space-x-2 bg-[#00915a] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md hover:bg-[#006646] active:scale-95 transition-all animate-pulse-subtle"
@@ -404,6 +423,12 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
             </div>
           </div>
         )}
+
+        {/* Sustainable Finance Section */}
+        <SustainableFinanceSection
+          config={industry.sustainableFinance}
+          industryName={industry.name}
+        />
       </div>
 
       {/* Right Column: Interactive Checklist */}
@@ -499,6 +524,15 @@ const IndustryDashboard: React.FC<IndustryDashboardProps> = ({ industry }) => {
           </div>
         </div>
       </div>
+      </div>
+
+      {/* PDF Export Footer */}
+      <PdfExportFooter
+        elementId="industry-dashboard-screen"
+        reportTitle={`Branża PKD ${industry.pkd} - ${industry.name}`}
+        fileNamePrefix="Raport_Sektorowy"
+        subtitle="Wygeneruj pełny oficjalny raport sektora (w tym filary dekarbonizacji, ograniczenia ESG, analizę zrównoważonego finansowania oraz checklistę) i zapisz go na dysku."
+      />
     </div>
   );
 };

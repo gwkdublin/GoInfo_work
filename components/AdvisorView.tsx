@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Industry } from '../types';
 import IndustryDashboard from './IndustryDashboard';
+import PdfExportFooter from './PdfExportFooter';
 
 interface AdvisorViewProps {
   industries: Industry[];
@@ -35,7 +36,7 @@ const AdvisorView: React.FC<AdvisorViewProps> = ({ industries }) => {
   }
 
   return (
-    <div className="space-y-8 animate-fadeIn">
+    <div id="advisor-search-screen" className="space-y-8 animate-fadeIn pb-12">
       <div className="bg-[#00915a] text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
           <h2 className="text-3xl font-bold mb-2">Znajdź branżę klienta</h2>
@@ -92,6 +93,14 @@ const AdvisorView: React.FC<AdvisorViewProps> = ({ industries }) => {
           </div>
         )}
       </div>
+
+      {/* PDF Export Footer */}
+      <PdfExportFooter
+        elementId="advisor-search-screen"
+        reportTitle="Wyszukiwarka Branż Doradczych"
+        fileNamePrefix="CarbonBiz_Wyszukiwarka"
+        subtitle="Wygeneruj i pobierz raport podsumowujący znalezione branże w formacie PDF."
+      />
     </div>
   );
 };
