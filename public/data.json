@@ -1,371 +1,944 @@
 {
   "industries": [
     {
-      "id": "1",
-      "pkd": "10.11.Z",
-      "name": "Przetwórstwo mięsa",
-      "description": "Branża przetwórstwa mięsa obejmuje procesy przetwarzania mięsa pochodzącego z chowu zwierząt na mięso spożywcze, w tym ubój, rozbiór, obróbkę, konserwację, pakowanie i dystrybucję produktów mięsnych.",
-      "businessModel": "Model oparty na wysokim wolumenie przy relatywnie niskich marżach jednostkowych. Kluczowa jest logistyka i zarządzanie łańcuchem dostaw.",
+      "id": "p1",
+      "pkd": "01.61.Z",
+      "name": "Działalność usługowa wspomagająca produkcję roślinną",
+      "description": "Sektor obejmuje profesjonalne usługi rolnicze świadczone na zlecenie gospodarstw i przedsiębiorstw rolnych - od przygotowania pól, siewu i sadzenia, przez pielęgnację i ochronę upraw (w tym opryski, także agrolotnicze), po zbiory, zwalczanie szkodników i utrzymanie infrastruktury irygacyjnej.",
+      "businessModel": "Model biznesowy opiera się na wynajmie specjalistycznych maszyn rolniczych wraz z obsługą operatorską oraz rozliczeniu usług punktowych (za hektar, za przejazd, za sezon). Firmy w tym sektorze to w większości niewielkie, silnie rozdrobnione podmioty, często powiązane rodzinnie z gospodarstwami rolnymi, o wysokiej sezonowości przychodów skoncentrowanych w okresach siewu, ochrony i żniw. Rentowność zależy w dużej mierze od wykorzystania parku maszynowego poza sezonem szczytowym oraz umiejętności planowania logistyki między klientami. Rosnące koszty paliwa, części zamiennych i pracowników sezonowych wywierają presję na marże, a jednocześnie rośnie popyt na usługi precyzyjnego rolnictwa (nawigacja GPS, opryski zmiennodawkowe).",
       "costDrivers": [
-        "Ceny surowca (żywiec)",
-        "Energia i chłodnictwo",
-        "Koszty logistyki i paliwa",
-        "Wymogi sanitarno-weterynaryjne"
+        "Paliwo i koszty eksploatacji maszyn",
+        "Amortyzacja i serwis parku maszynowego",
+        "Wynagrodzenia operatorów (w tym sezonowych)",
+        "Środki ochrony roślin i materiał siewny (gdy dostarczane przez usługodawcę)",
+        "Ubezpieczenia maszyn i OC"
       ],
       "revenueDrivers": [
-        "Eksport na rynki UE i Azję",
-        "Marki własne sieci handlowych",
-        "Premiumizacja produktów (BIO, EKO)"
+        "Usługi agrotechniczne rozliczane za hektar/sezon",
+        "Wynajem maszyn rolniczych z obsługą",
+        "Usługi agrolotnicze i precyzyjnego rolnictwa",
+        "Kontrakty wieloletnie z gospodarstwami/grupami producenckimi",
+        "Programy dopłat rolno-środowiskowych wspierające popyt na usługi"
       ],
       "keyKPIs": [
         {
-          "label": "Yield (Wydajność)",
+          "label": "Liczba obsłużonych hektarów w sezonie",
+          "value": "ha"
+        },
+        {
+          "label": "Wykorzystanie (utylizacja) parku maszynowego",
           "value": "%"
         },
         {
-          "label": "Margin per kg",
-          "value": "PLN"
+          "label": "Koszt na hektar",
+          "value": "PLN/ha"
         },
         {
-          "label": "Stock turnover",
-          "value": "Dni"
+          "label": "Terminowość realizacji usług",
+          "value": "%"
+        },
+        {
+          "label": "Marża na usłudze",
+          "value": "%"
+        },
+        {
+          "label": "Liczba maszynogodzin",
+          "value": "mh"
         }
       ],
       "funFacts": [
-        "Polska jest jednym z największych eksporterów drobiu w UE.",
-        "Sektor ten przechodzi obecnie intensywną konsolidację."
+        "W bazach REGON/CEIDG figuruje ok. 8,6 tys. aktywnych firm z przeważającym kodem PKD 01.61.Z (wg bazy BNF, dane bieżące).",
+        "Zakres podklasy PKD 01.61.Z obejmuje bardzo szeroki wachlarz usług - od siewu po zwalczanie szkodników (w tym królików) czy przesadzanie ryżu.",
+        "Usługi agrolotnicze (opryski z powietrza) są formalnie częścią tej podklasy PKD."
       ],
       "checklist": [
         {
           "id": "c1",
-          "question": "Jaki jest udział eksportu w przychodach?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Jaki jest udział przychodów przypadający na kilku kluczowych klientów?",
+          "isDone": false
         },
         {
           "id": "c2",
-          "question": "Jak zabezpieczają Państwo ceny surowca?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Jak wygląda struktura floty maszyn (własność vs leasing)?",
+          "isDone": false
         },
         {
           "id": "c3",
-          "question": "Czy planowane są inwestycje w automatyzację uboju?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Jaki procent roku stanowi sezon szczytowy i jak wygląda wykorzystanie maszyn poza sezonem?",
+          "isDone": false
         },
         {
           "id": "c4",
-          "question": "Czy firma mierzy swój ślad węglowy (emisje Scope 1, 2, 3)?",
-          "isDone": false,
-          "category": "ESG"
+          "question": "Czy firma świadczy usługi precyzyjnego rolnictwa (GPS, zmienne dawkowanie)?",
+          "isDone": false
         },
         {
           "id": "c5",
-          "question": "Jakie są główne źródła energii i czy rozważano biogazownię?",
-          "isDone": false,
-          "category": "ESG"
-        }
-      ],
-      "analyst": {
-        "name": "Grzegorz Kozieja",
-        "role": "Starszy Analityk Sektora Agro",
-        "phone": "+48 515675314",
-        "email": "grzegorz.kozieja@bnpparibas.pl",
-        "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=grzegorz.kozieja@bnpparibas.pl"
-      },
-      "esgExpert": {
-        "name": "Kamila Michowska",
-        "role": "Specjalista ds. Ekspertyzy i Analizy Potencjału ESG",
-        "phone": "444 555 666",
-        "email": "kamila.michowska1@bnpparibas.pl",
-        "teamsLink": ""
-      },
-      "decarbonizationPillars": [
-        {
-          "id": "p1",
-          "name": "Efektywność energetyczna produkcji",
-          "description": "Optymalizacja zużycia energii w procesach ogrzewania / chłodzenia / produkcji, prowadząca do ograniczenia zapotrzebowania na energię pierwotną o 30%.",
-          "sustainablePoints": [
-            {
-              "id": "p1-1",
-              "text": "Instalacje odzysku ciepła",
-              "subpoints": [
-                "Odzysk ciepła z instalacji chłodniczych lub pary technologicznej",
-                "Wykorzystanie ciepła do podgrzewania wody technologicznej i mycia hal"
-              ]
-            },
-            {
-              "id": "p1-2",
-              "text": "Modernizacja chłodnictwa",
-              "subpoints": [
-                "Wymiana sprężarek na wysokosprawne",
-                "Przejście na naturalne czynniki (amoniak, CO2)"
-              ]
-            }
-          ]
+          "question": "Jak zabezpieczane są kontrakty na kolejny sezon?",
+          "isDone": false
         },
-        {
-          "id": "p2",
-          "name": "Przejście na paliwa niskoemisyjne / OZE",
-          "description": "Elektryfikacja procesów z wykorzystaniem odnawialnych źródeł energii oraz instalacji biogazowych.",
-          "sustainablePoints": [
-            {
-              "id": "p2-1",
-              "text": "Biogazownie przy zakłady poubojowych",
-              "subpoints": [
-                "Wykorzystanie odpadów biologicznych do wytwarzania prądu i ciepła"
-              ]
-            },
-            {
-              "id": "p2-2",
-              "text": "Instalacje fotowoltaiczne i pompy ciepła",
-              "subpoints": [
-                "Zabezpieczenie własnego zapotrzebowania na energię elektryczną"
-              ]
-            }
-          ]
-        }
-      ],
-      "esgLimitations": [
-        {
-          "id": "lim-1",
-          "name": "Polityka sektorowa ESG",
-          "description": "Wymóg spełnienia polityk ostrożnościowych dotyczących dobrostanu zwierząt oraz standardów sanitarnych.",
-          "points": [
-            {
-              "id": "lim-p1",
-              "text": "Wysokie koszty dostosowania do dyrektyw unijnych",
-              "subpoints": [
-                "Certyfikacja dostawców",
-                "Monitoring transportu żywca"
-              ]
-            }
-          ]
-        }
-      ],
-      "sustainableFinance": {
-        "expert": {
-          "name": "Krzysztof Majewski",
-          "role": "Ekspert ds. Finansowania Zrównoważonego",
-          "phone": "+48 500 800 900",
-          "email": "krzysztof.majewski@bnpparibas.pl",
-          "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=krzysztof.majewski@bnpparibas.pl"
-        },
-        "potentials": [
-          {
-            "id": "pot-1",
-            "key": "kredyt_dekarbonizacyjny",
-            "name": "Kredyt dekarbonizacyjny",
-            "description": "Finansowanie dedykowane bezpośrednim inwestycjom w redukcję emisji i transformację energetyczną.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 10
-          },
-          {
-            "id": "pot-2",
-            "key": "sll",
-            "name": "SLL",
-            "description": "Kredyt powiązany z realizacją kluczowych wskaźników efektywności ESG (KPI) i rabatem na marży.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 50
-          },
-          {
-            "id": "pot-3",
-            "key": "esg_rating_loan",
-            "name": "ESG rating linked loan",
-            "description": "Finansowanie warunkowane utrzymaniem lub poprawą niezależnego ratingu ESG.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 100
-          },
-          {
-            "id": "pot-4",
-            "key": "kredyt_ekologiczny",
-            "name": "Kredy ekologiczny",
-            "description": "Preferencyjne wsparcie na termomodernizację, wymianę maszyn oraz wdrażanie systemów OZE.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 5
-          },
-          {
-            "id": "pot-5",
-            "key": "pure_player",
-            "name": "Status Pure Player",
-            "description": "Certyfikacja podmiotu, którego ponad 90% działalności spełnia kryteria Taksonomii UE.",
-            "isAvailable": false,
-            "minRevenueMlnPLN": 20
-          },
-          {
-            "id": "pot-6",
-            "key": "envirly",
-            "name": "Potencjał na Envirly",
-            "description": "Wdrożenie platformy zarządczej do automatycznej kalkulacji i raportowania śladu węglowego.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 15
-          },
-          {
-            "id": "pot-7",
-            "key": "fx",
-            "name": "FX",
-            "description": "Zabezpieczenie ryzyka kursowego dla kontraktów na zakupy niskoemisyjnych technologii.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 30
-          },
-          {
-            "id": "pot-8",
-            "key": "commodities",
-            "name": "Commodities",
-            "description": "Strukturyzowane instrumenty zabezpieczające ceny energii elektrycznej, gazu i uprawnień CO2.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 25
-          }
-        ]
-      }
-    },
-    {
-      "id": "2",
-      "pkd": "62.01.Z",
-      "name": "Działalność związana z oprogramowaniem",
-      "description": "Tworzenie i wdrażanie systemów IT, aplikacji mobilnych oraz rozwiązań chmurowych.",
-      "businessModel": "Opiera się na sprzedaży licencji (SaaS) lub rozliczaniu czasu pracy specjalistów (Time & Material / Fixed Price).",
-      "costDrivers": [
-        "Wynagrodzenia deweloperów",
-        "Koszty pozyskania talentów",
-        "Infrastruktura chmurowa (AWS/Azure)",
-        "Szkolenia i certyfikacje"
-      ],
-      "revenueDrivers": [
-        "Abonamenty SaaS",
-        "Usługi wdrożeniowe",
-        "Utrzymanie i wsparcie (Maintenance)"
-      ],
-      "keyKPIs": [
-        {
-          "label": "MRR / ARR",
-          "value": "USD/PLN"
-        },
-        {
-          "label": "Churn Rate",
-          "value": "%"
-        },
-        {
-          "label": "LTV/CAC Ratio",
-          "value": "X"
-        }
-      ],
-      "funFacts": [
-        "Branża IT generuje blisko 8% PKB Polski.",
-        "Ponad 60% polskich firm IT pracuje dla klientów zagranicznych."
-      ],
-      "checklist": [
         {
           "id": "c6",
-          "question": "Jaki procent przychodów to dochód powtarzalny (Recurring)?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Jaka jest dostępność i rotacja wykwalifikowanych operatorów maszyn?",
+          "isDone": false
         },
         {
           "id": "c7",
-          "question": "Jak wygląda rotacja pracowników w kluczowych zespołach?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Jak wygląda polityka cenowa - stawka za hektar czy za godzinę pracy?",
+          "isDone": false
         },
         {
           "id": "c8",
-          "question": "Kto posiada autorskie prawa majątkowe do kluczowego kodu?",
-          "isDone": false,
-          "category": "Biznes"
+          "question": "Czy firma korzysta z dopłat/programów unijnych wspierających inwestycje w maszyny?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jaki jest wiek i stan techniczny floty maszyn?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Jak zabezpieczone jest ryzyko pogodowe wpływające na terminowość usług?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Czy działalność jest ubezpieczona od szkód wyrządzonych klientom (np. uszkodzenie upraw)?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jaki jest promień geograficzny działania firmy?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "pkd": "10.13.Z",
+      "name": "Produkcja wyrobów z mięsa, włączając wyroby z mięsa drobiowego",
+      "description": "Sektor obejmuje przetwarzanie mięsa surowego (wieprzowego, wołowego, drobiowego) na wyroby wędliniarskie i garmażeryjne - wędliny, kiełbasy, kabanosy, parówki, pasztety i konserwy mięsne.",
+      "businessModel": "Model biznesowy oparty jest na wysokim wolumenie produkcji przy relatywnie niskich, ale stabilnych marżach jednostkowych, z kluczową rolą receptur, jakości surowca i efektywności linii produkcyjnych. Znaczna część sprzedaży odbywa się poprzez sieci handlowe (w tym marki własne), co daje dużą skalę, ale też silną presję cenową ze strony odbiorców. Segment produktów wysokobiałkowych i \"clean label\" rośnie wyraźnie szybciej niż rynek bazowy, otwierając przestrzeń do premiumizacji. Firmy mierzą się z dużą zmiennością cen surowca (żywca) oraz rosnącymi wymogami sanitarno-weterynaryjnymi i identyfikowalności łańcucha dostaw.",
+      "costDrivers": [
+        "Ceny surowca mięsnego (żywiec, półtusze)",
+        "Energia i chłodnictwo",
+        "Opakowania",
+        "Wynagrodzenia (produkcja wielozmianowa)",
+        "Logistyka i transport chłodniczy"
+      ],
+      "revenueDrivers": [
+        "Sprzedaż do sieci handlowych (w tym marki własne)",
+        "Eksport (UE i rynki pozaunijne)",
+        "Segment premium/wysokobiałkowy/clean label",
+        "Kanał HoReCa i catering",
+        "Sprzedaż pod markami własnymi producenta"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Marża na kg produktu",
+          "value": "PLN/kg"
+        },
+        {
+          "label": "Wydajność linii produkcyjnej (yield)",
+          "value": "%"
+        },
+        {
+          "label": "Rotacja zapasów",
+          "value": "dni"
+        },
+        {
+          "label": "Udział sprzedaży private label",
+          "value": "%"
+        },
+        {
+          "label": "Udział eksportu w przychodach",
+          "value": "%"
+        },
+        {
+          "label": "Koszt surowca jako % kosztów całkowitych",
+          "value": "%"
         }
       ],
-      "analyst": {
-        "name": "Marta Nowak",
-        "role": "Ekspert ds. Sektora TMT",
-        "phone": "+48 700 300 400",
-        "email": "marta.nowak@bnpparibas.pl",
-        "teamsLink": "https://teams.microsoft.com/l/chat/0/0?users=marta.nowak@bnpparibas.pl"
-      },
-      "esgExpert": {
-        "name": "Kamila Michowska",
-        "role": "Specjalista ds. Ekspertyzy i Analizy Potencjału ESG",
-        "phone": "444 555 666",
-        "email": "kamila.michowska1@bnpparibas.pl",
-        "teamsLink": ""
-      },
-      "decarbonizationPillars": [],
-      "esgLimitations": [],
-      "sustainableFinance": {
-        "expert": {
-          "name": "Krzysztof Majewski",
-          "role": "Ekspert ds. Finansowania Zrównoważonego",
-          "phone": "+48 500 800 900",
-          "email": "krzysztof.majewski@bnpparibas.pl",
-          "teamsLink": ""
+      "funFacts": [
+        "Wartość polskiego rynku mięsa i wędlin (mięso czerwone, drób, wędliny, zamienniki roślinne) w 2025 r. przekroczyła 38 mld zł, a przeciętny nabywca kupił ponad 125 kg tych produktów.",
+        "Wędliny to najczęściej kupowana kategoria mięsna w Polsce - sięga po nie 99,56% gospodarstw domowych, a roczny wolumen zakupów sięga blisko 700 tys. ton.",
+        "Dyskonty odpowiadają już za ok. 38,8% wartości i 42,3% wolumenu zakupów mięsa, drobiu, wędlin i zamienników roślinnych w Polsce (dane YouGov za 2025 r.)."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jaki jest udział eksportu w przychodach i główne kierunki sprzedaży zagranicznej?",
+          "isDone": false
         },
-        "potentials": [
-          {
-            "id": "pot-1",
-            "key": "kredyt_dekarbonizacyjny",
-            "name": "Kredyt dekarbonizacyjny",
-            "description": "Finansowanie dedykowane bezpośrednim inwestycjom w redukcję emisji i transformację energetyczną.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 10
-          },
-          {
-            "id": "pot-2",
-            "key": "sll",
-            "name": "SLL",
-            "description": "Kredyt powiązany z realizacją kluczowych wskaźników efektywności ESG (KPI) i rabatem na marży.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 50
-          },
-          {
-            "id": "pot-3",
-            "key": "esg_rating_loan",
-            "name": "ESG rating linked loan",
-            "description": "Finansowanie warunkowane utrzymaniem lub poprawą niezależnego ratingu ESG.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 100
-          },
-          {
-            "id": "pot-4",
-            "key": "kredyt_ekologiczny",
-            "name": "Kredy ekologiczny",
-            "description": "Preferencyjne wsparcie na termomodernizację, wymianę maszyn oraz wdrażanie systemów OZE.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 5
-          },
-          {
-            "id": "pot-5",
-            "key": "pure_player",
-            "name": "Status Pure Player",
-            "description": "Certyfikacja podmiotu, którego ponad 90% działalności spełnia kryteria Taksonomii UE.",
-            "isAvailable": false,
-            "minRevenueMlnPLN": 20
-          },
-          {
-            "id": "pot-6",
-            "key": "envirly",
-            "name": "Potencjał na Envirly",
-            "description": "Wdrożenie platformy zarządczej do automatycznej kalkulacji i raportowania śladu węglowego.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 15
-          },
-          {
-            "id": "pot-7",
-            "key": "fx",
-            "name": "FX",
-            "description": "Zabezpieczenie ryzyka kursowego dla kontraktów na zakupy niskoemisyjnych technologii.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 30
-          },
-          {
-            "id": "pot-8",
-            "key": "commodities",
-            "name": "Commodities",
-            "description": "Strukturyzowane instrumenty zabezpieczające ceny energii elektrycznej, gazu i uprawnień CO2.",
-            "isAvailable": true,
-            "minRevenueMlnPLN": 25
-          }
-        ]
-      }
+        {
+          "id": "c2",
+          "question": "Jak firma zabezpiecza się przed wahaniami cen surowca (kontrakty, hedging)?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Jaki jest udział sprzedaży w modelu marki własnej sieci (private label) vs marki producenta?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Jakie certyfikaty jakości posiada zakład (BRC, IFS, HACCP)?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Czy planowane są inwestycje w automatyzację produkcji?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Jak zapewniona jest identyfikowalność surowca w łańcuchu dostaw?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jaka jest elastyczność cenowa wobec negocjacji z sieciami handlowymi?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jak zdywersyfikowana jest baza dostawców żywca?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jakie są plany rozwoju segmentu premium/wysokobiałkowego?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Jak zarządzane jest ryzyko chorób zwierzęcych (ASF, ptasia grypa) w łańcuchu dostaw?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jak wygląda logistyka i utrzymanie łańcucha chłodniczego?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jaka jest koncentracja przychodów na największych klientach (sieciach handlowych)?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "pkd": "10.71.Z",
+      "name": "Produkcja pieczywa; produkcja świeżych wyrobów ciastkarskich i ciastek",
+      "description": "Sektor obejmuje produkcję chleba, bułek, pieczywa cukierniczego i wyrobów pokrewnych (w tym rosnący segment bułek do burgerów i hot dogów), realizowaną zarówno przez duże zakłady przemysłowe, jak i tysiące małych, rzemieślniczych piekarni.",
+      "businessModel": "Model biznesowy różni się skalą: małe piekarnie konkurują świeżością, lokalnością i relacją z klientem, podczas gdy duzi gracze (w tym piekarnie sieci dyskontowych) stawiają na skalę, automatyzację i dystrybucję wielokanałową. Branża od dekad mierzy się ze spadkiem spożycia tradycyjnego pieczywa per capita, częściowo kompensowanym wzrostem segmentów convenience oraz podnoszeniem cen jednostkowych. Struktura rynku jest silnie rozdrobniona i podlega konsolidacji, a duże sieci handlowe coraz częściej przejmują produkcję pieczywa codziennego we własnych piekarniach sklepowych. Kluczowym wyzwaniem kosztowym jest zmienność cen mąki i energii oraz rosnące koszty pracy przy wysokiej pracochłonności produkcji rzemieślniczej.",
+      "costDrivers": [
+        "Mąka i surowce zbożowe",
+        "Energia (piece, chłodnictwo)",
+        "Wynagrodzenia (praca zmianowa, często nocna)",
+        "Opakowania",
+        "Logistyka dystrybucji świeżego pieczywa (krótki termin przydatności)"
+      ],
+      "revenueDrivers": [
+        "Sprzedaż detaliczna (sieci handlowe, dyskonty, piekarnie własne)",
+        "Segment convenience (bułki do burgerów/hot dogów, tortille)",
+        "Pieczywo cukiernicze i wyroby świąteczne",
+        "Kanał HoReCa i catering",
+        "Eksport (głównie na rynek UE)"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Wolumen sprzedaży",
+          "value": "tony/dzień"
+        },
+        {
+          "label": "Poziom zwrotów/strat pieczywa",
+          "value": "%"
+        },
+        {
+          "label": "Marża na produkt",
+          "value": "%"
+        },
+        {
+          "label": "Udział sprzedaży w kanale nowoczesnym vs tradycyjnym",
+          "value": "%"
+        },
+        {
+          "label": "Koszt mąki jako % kosztów produkcji",
+          "value": "%"
+        },
+        {
+          "label": "Wydajność linii/pieca",
+          "value": "%"
+        }
+      ],
+      "funFacts": [
+        "W 2024 r. Polacy wydali na pieczywo 11,3 mld zł, kupując łącznie ok. 1,2 mln ton produktów tej kategorii - a mimo to pieczywo pozostaje jednym z najczęściej wyrzucanych produktów spożywczych.",
+        "Wg danych GUS/rejestru REGON w Polsce działa ponad 12 tys. aktywnych firm z PKD 10.71.Z, z czego ponad 90% to mikro- i małe firmy o strukturze typowo rzemieślniczej.",
+        "Przeciętne miesięczne spożycie pieczywa na osobę systematycznie spada - z 2,75 kg w 2020 r. do 2,57 kg w 2024 r. (GUS), podczas gdy segment convenience (np. bułki do hot dogów) rósł o kilkanaście procent rok do roku."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jaki jest udział sprzedaży do sieci dyskontowych vs sprzedaż własna/detaliczna?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jaki jest poziom strat/zwrotów niesprzedanego pieczywa?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Czy planowane są inwestycje w automatyzację pieców i linii produkcyjnych?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Jak zdywersyfikowany jest portfel produktowy (tradycyjne vs convenience)?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jak firma zabezpiecza się przed wahaniami cen mąki i energii?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Jaka jest elastyczność cenowa wobec rosnących kosztów działalności?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Czy firma planuje rozwój eksportu?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jak wygląda podejście do receptur i trendu clean label?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jak zarządzana jest zmianowość i dostępność pracowników produkcyjnych?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Czy dystrybucja odbywa się własną flotą, czy przez zewnętrznych przewoźników?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jak wygląda sezonowość sprzedaży (okres świąteczny)?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jakie certyfikaty jakości posiada zakład?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "pkd": "10.82.Z",
+      "name": "Produkcja kakao, czekolady i wyrobów cukierniczych",
+      "description": "Sektor obejmuje przetwarzanie ziarna kakaowego oraz produkcję czekolady, wyrobów czekoladowych, cukierków i innych słodyczy. Polska jest jednym z czołowych producentów i eksporterów czekolady w Europie, konkurując głównie ceną i elastycznością produkcyjną wobec zachodnioeuropejskich potentatów.",
+      "businessModel": "Model biznesowy opiera się w dużej mierze na eksporcie (znaczna część produkcji trafia za granicę) oraz na silnych markach własnych (Wedel, Wawel, Mieszko, Goplana) obok globalnych koncernów (Mondelez, Ferrero) obecnych w Polsce. Branża jest wyjątkowo wrażliwa na wahania cen surowców - przede wszystkim kakao i cukru - notowanych na giełdach światowych, co bezpośrednio przekłada się na marże producentów. Rosnące regulacje unijne (np. EUDR dotyczące monitorowania pochodzenia surowców) zwiększają koszty zgodności, a jednocześnie rynek pozostaje atrakcyjny dzięki stabilnemu, sezonowo wzmacnianemu popytowi konsumenckiemu.",
+      "costDrivers": [
+        "Ceny kakao (silnie zmienne, rekordowe wzrosty w ostatnich latach)",
+        "Ceny cukru",
+        "Energia",
+        "Opakowania (jakość premium)",
+        "Koszty zgodności regulacyjnej (EUDR, identyfikowalność surowców)"
+      ],
+      "revenueDrivers": [
+        "Eksport (Niemcy, Wielka Brytania, kraje UE, Bliski Wschód)",
+        "Marki własne rozpoznawalne konsumencko",
+        "Sezonowość (Wielkanoc, Boże Narodzenie)",
+        "Segment premium/rzemieślniczy (manufaktury, czekolada wegańska)",
+        "Kontrakty z sieciami handlowymi"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Marża brutto (wrażliwa na ceny kakao)",
+          "value": "%"
+        },
+        {
+          "label": "Wolumen produkcji",
+          "value": "tony"
+        },
+        {
+          "label": "Udział eksportu w przychodach",
+          "value": "%"
+        },
+        {
+          "label": "Udział segmentu premium w sprzedaży",
+          "value": "%"
+        },
+        {
+          "label": "Koszt kakao jako % kosztów surowcowych",
+          "value": "%"
+        },
+        {
+          "label": "Poziom zabezpieczenia (hedging) cen surowca",
+          "value": "%"
+        }
+      ],
+      "funFacts": [
+        "Polska jest czwartym co do wielkości producentem wyrobów czekoladowych wśród krajów UE (7,1% udziału w produkcji), a eksport polskiej czekolady i słodyczy przekroczył 12 mld zł rocznie.",
+        "Od 2023 r. ceny kakao na rynkach światowych wzrosły o ok. 230%, co było głównym czynnikiem presji kosztowej w branży.",
+        "Produkcja wyrobów czekoladowych w UE jest skoncentrowana w zaledwie sześciu krajach odpowiadających za ok. 80% wartości unijnego rynku."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jak firma zabezpiecza się przed wahaniami cen kakao i cukru (hedging, kontrakty terminowe)?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jaki jest udział eksportu w przychodach i główne kierunki sprzedaży?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Jak firma przygotowuje się do wymogów regulacji EUDR?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Jaka jest struktura klientów (sieci handlowe vs eksport vs marka własna)?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jak wygląda sezonowość produkcji i zarządzanie zapasami przed świętami?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Czy planowane są inwestycje w automatyzację produkcji?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jakie są plany rozwoju segmentu premium/rzemieślniczego?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jak zdywersyfikowana jest baza dostawców surowca?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jaka jest polityka cenowa wobec wzrostu kosztów surowców?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Czy produkty posiadają certyfikaty (Fair Trade, Rainforest Alliance)?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jak zarządzane jest ryzyko walutowe (zakupy surowców w USD/EUR)?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jakie są plany ekspansji na nowe rynki eksportowe?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p5",
+      "pkd": "21.20.Z",
+      "name": "Produkcja leków i pozostałych wyrobów farmaceutycznych",
+      "description": "Sektor obejmuje wytwarzanie substancji czynnych, leków generycznych i oryginalnych, produktów OTC oraz suplementów diety. Polska jest piątym co do wielkości rynkiem farmaceutycznym w UE pod względem wartości sprzedaży, ale dopiero dwunastym pod względem wielkości produkcji, co odzwierciedla wysoką zależność od importu substancji czynnych i gotowych leków.",
+      "businessModel": "Model biznesowy krajowych producentów opiera się głównie na lekach generycznych, sprzedawanych z istotnie niższą marżą niż leki oryginalne, przy silnej presji cenowej ze strony systemu refundacji i negocjacji z Ministerstwem Zdrowia. Branża jest wysoce regulowana (GMP, rejestracja leków, nadzór URPL) i kapitałochłonna, co stanowi barierę wejścia, ale jednocześnie sektor należy do najbardziej innowacyjnych w polskim przemyśle pod względem odsetka firm wdrażających innowacje. Rosnący eksport i inwestycje w nowe moce produkcyjne są odpowiedzią na europejską politykę zwiększania bezpieczeństwa lekowego i ograniczania zależności od dostaw z Azji.",
+      "costDrivers": [
+        "Substancje czynne (API) - w dużej mierze importowane z Azji",
+        "Koszty badań, rejestracji i zgodności regulacyjnej (GMP)",
+        "Energia i utrzymanie sterylnych linii produkcyjnych",
+        "Wynagrodzenia wysoko wykwalifikowanej kadry",
+        "Koszty walidacji i kontroli jakości"
+      ],
+      "revenueDrivers": [
+        "Sprzedaż refundowana (kontrakty z NFZ/Ministerstwem Zdrowia)",
+        "Segment leków generycznych",
+        "Sprzedaż OTC i suplementów diety",
+        "Eksport (rosnący udział, zwłaszcza generyki)",
+        "Segment szpitalny"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Udział w rynku refundowanym (wolumen vs wartość)",
+          "value": "%"
+        },
+        {
+          "label": "Marża na produkt (generyki vs oryginalne)",
+          "value": "%"
+        },
+        {
+          "label": "Nakłady na R&D",
+          "value": "% przychodów"
+        },
+        {
+          "label": "Czas rejestracji nowych produktów",
+          "value": "miesiące"
+        },
+        {
+          "label": "Udział eksportu w przychodach",
+          "value": "%"
+        },
+        {
+          "label": "Wykorzystanie mocy produkcyjnych",
+          "value": "%"
+        }
+      ],
+      "funFacts": [
+        "Polska jest piątym co do wartości rynkiem farmaceutycznym w UE (sprzedaż leków ok. 13,1 mld euro w 2024 r. wg EFPIA), ale dopiero 12. pod względem wielkości produkcji (ok. 3,7 mld euro).",
+        "Choć co drugi lek refundowany w Polsce jest produkowany krajowo, udział polskich firm w wartości całego rynku farmaceutycznego wynosi tylko ok. 30%.",
+        "W 2025 r. przychody producentów farmaceutyków w Polsce (PKD 21) sięgnęły 26,3 mld zł, o ponad 50% więcej niż pięć lat wcześniej."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jaki jest udział sprzedaży refundowanej vs komercyjnej w przychodach?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jak zdywersyfikowana jest baza dostawców substancji czynnych (API)?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Jaki jest status certyfikatów GMP i rejestracji produktów?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Czy planowane są inwestycje w nowe moce produkcyjne?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jaki jest udział eksportu w przychodach i kierunki sprzedaży?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Jaki jest poziom nakładów na badania i rozwój (R&D)?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jak firma zarządza ekspozycją na negocjacje cenowe z NFZ?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jaka jest struktura portfela produktowego (generyki vs OTC vs oryginalne)?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jak zarządzane jest ryzyko przerw w łańcuchu dostaw surowców?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Czy firma prowadzi prace nad nowymi terapiami/biotechnologią?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jaka jest struktura klientów (hurtownie, szpitale, apteki)?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jak wygląda poziom należności i płynność w kontekście terminów płatności NFZ?",
+          "isDone": false
+        },
+        {
+          "id": "c13",
+          "question": "Jak firma przygotowuje się do regulacji UE dot. bezpieczeństwa lekowego?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p6",
+      "pkd": "41.10.Z",
+      "name": "Realizacja projektów budowlanych związanych ze wznoszeniem budynków",
+      "description": "Sektor obejmuje działalność deweloperską - organizację i finansowanie procesu budowlanego (od zakupu gruntu i uzyskania pozwoleń, przez zlecenie budowy generalnym wykonawcom, po sprzedaż lub wynajem gotowych lokali), bez konieczności samodzielnego wykonywania robót budowlanych. Deweloperzy odpowiadają obecnie za ponad 60% wszystkich mieszkań oddawanych do użytku w Polsce.",
+      "businessModel": "Model biznesowy jest silnie kapitałochłonny i cykliczny - wymaga finansowania budowy (kredyty, obligacje, przedpłaty klientów) na wiele miesięcy przed realizacją przychodów ze sprzedaży, przy czym cykl inwestycyjny (od zakupu gruntu do sprzedaży ostatniego lokalu) trwa zwykle kilka lat. Rentowność zależy od trafności zakupu gruntów, tempa uzyskiwania pozwoleń, kosztów generalnego wykonawstwa oraz koniunktury na rynku mieszkaniowym. Branża jest silnie wrażliwa na zmiany regulacyjne (np. reformę planistyczną, warunki zabudowy) oraz wahania popytu związane z polityką monetarną i dostępnością kredytów hipotecznych.",
+      "costDrivers": [
+        "Zakup gruntów",
+        "Koszty generalnego wykonawstwa (materiały budowlane, robocizna)",
+        "Koszty finansowania (odsetki od kredytów/obligacji)",
+        "Koszty administracyjne i pozwoleń",
+        "Koszty marketingu i sprzedaży"
+      ],
+      "revenueDrivers": [
+        "Sprzedaż lokali mieszkalnych (klienci indywidualni, inwestorzy)",
+        "Sprzedaż powierzchni komercyjnych",
+        "Najem długoterminowy (rosnący segment PRS)",
+        "Przedsprzedaż na etapie budowy (poprawia płynność)",
+        "Programy rządowe wspierające popyt (np. dopłaty do kredytów)"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Liczba lokali w ofercie/sprzedanych",
+          "value": "szt."
+        },
+        {
+          "label": "Tempo sprzedaży",
+          "value": "mies. do wyprzedania"
+        },
+        {
+          "label": "Marża deweloperska",
+          "value": "%"
+        },
+        {
+          "label": "Wskaźnik przedsprzedaży przed startem budowy",
+          "value": "%"
+        },
+        {
+          "label": "Koszt budowy na m²",
+          "value": "PLN/m²"
+        },
+        {
+          "label": "Zadłużenie netto/kapitał własny",
+          "value": "x"
+        },
+        {
+          "label": "Wielkość banku ziemi",
+          "value": "liczba mieszkań"
+        }
+      ],
+      "funFacts": [
+        "Deweloperzy odpowiadają obecnie za ok. 64% wszystkich mieszkań oddawanych do użytku w Polsce - udział ten wzrósł z ok. 40% dwie dekady temu.",
+        "Na koniec października 2025 r. w budowie pozostawało w Polsce ok. 857 tys. mieszkań.",
+        "Aż 60,2% pozwoleń na budowę mieszkań w 2025 r. wydano na podstawie miejscowych planów zagospodarowania przestrzennego, pozostałe - na podstawie warunków zabudowy."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jaka jest struktura banku ziemi (posiadane grunty, etap przygotowania projektów)?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jaki jest poziom przedsprzedaży bieżących inwestycji?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Jaka jest struktura finansowania (kredyt bankowy, obligacje, kapitał własny)?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Ilu generalnych wykonawców współpracuje z firmą i jaka jest koncentracja tej współpracy?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jak firma zabezpiecza się przed wzrostem cen materiałów budowlanych?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Czy firma rozwija segment najmu instytucjonalnego (PRS)?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jaka jest wrażliwość sprzedaży na stopy procentowe i dostępność kredytów hipotecznych klientów?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jaki jest status pozwoleń na budowę dla planowanych projektów?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jak wygląda harmonogram realizacji i ryzyko opóźnień?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Jaka jest polityka cenowa i poziom rabatów/promocji?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jaka jest ekspozycja geograficzna działalności (miasta/regiony)?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Jak firma zarządza ryzykiem związanym z reformą planistyczną?",
+          "isDone": false
+        },
+        {
+          "id": "c13",
+          "question": "Jaki jest stosunek zawartych umów deweloperskich do aktów notarialnych?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p7",
+      "pkd": "56.11.Z",
+      "name": "Restauracje",
+      "description": "Sektor obejmuje prowadzenie restauracji i innych stałych placówek gastronomicznych oferujących posiłki przygotowywane i serwowane na miejscu lub na wynos.",
+      "businessModel": "Model biznesowy opiera się na wysokiej rotacji gości przy relatywnie niskich marżach jednostkowych, gdzie kluczowe znaczenie mają lokalizacja, kontrola kosztów żywności (food cost) oraz zarządzanie personelem, stanowiącym jeden z największych i najbardziej zmiennych kosztów. Po trudnym okresie pandemii i inflacji branża w 2025 r. wchodzi w fazę stabilizacji - rosną przychody, liczba lokali i średnia wartość rachunku, choć rotacja kadr i wysoka śmiertelność nowych punktów pozostają istotnym wyzwaniem strukturalnym. Liczba samych restauracji (w wąskiej definicji) spadła w ostatnim roku, co sugeruje konsolidację rynku i rozwój formatów sieciowych oraz alternatywnych (bary, dark kitchens). Sezonowość (szczyt w miesiącach letnich) oraz rosnące koszty energii, żywności i pracy wywierają stałą presję na rentowność.",
+      "costDrivers": [
+        "Koszty żywności (food cost)",
+        "Wynagrodzenia personelu (kuchnia, obsługa)",
+        "Czynsz/lokalizacja",
+        "Energia i media",
+        "Koszty dostaw/platform (przy działalności delivery)"
+      ],
+      "revenueDrivers": [
+        "Sprzedaż dań à la carte",
+        "Sprzedaż napojów (w tym alkoholu - wysokomarżowa)",
+        "Catering i eventy",
+        "Delivery/dowóz (własny lub przez platformy)",
+        "Menu sezonowe i oferty specjalne"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Food cost",
+          "value": "% przychodów"
+        },
+        {
+          "label": "Średni rachunek (average check)",
+          "value": "PLN"
+        },
+        {
+          "label": "Liczba gości dziennie/miesięcznie",
+          "value": "szt."
+        },
+        {
+          "label": "Rotacja stolików",
+          "value": "x/dzień"
+        },
+        {
+          "label": "Marża na napojach vs daniach",
+          "value": "%"
+        },
+        {
+          "label": "Rotacja personelu",
+          "value": "%"
+        },
+        {
+          "label": "Przychód na m² lokalu",
+          "value": "PLN/m²"
+        }
+      ],
+      "funFacts": [
+        "Na koniec 2024 r. w Polsce działało ok. 101,5 tys. lokali gastronomicznych, a łączne przychody branży wyniosły 85,2 mld zł (wzrost o 11,1% r/r).",
+        "Mimo wzrostu całego rynku, liczba samych restauracji (wąska kategoria) spadła w 2024 r. o 5,2%, podczas gdy segment barów i stołówek rósł - co sugeruje konsolidację rynku.",
+        "Średnia wartość rachunku w lokalach jednolokalowych (72,12 zł w styczniu 2025) jest wyższa niż w sieciach liczących ponad pięć lokali (59,31 zł).",
+        "Sezon letni (maj-wrzesień) generuje nawet o 20% wyższe miesięczne przychody niż pozostałe miesiące roku."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jak wygląda struktura food cost i negocjacje z dostawcami?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jaka jest rotacja personelu i strategia zatrzymania kluczowej kadry?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "Jaki jest udział przychodów z delivery/platform i marża po prowizjach?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Jak firma radzi sobie z sezonowością przychodów poza szczytem letnim?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jaka jest struktura menu pod kątem marży (dania vs napoje/alkohol)?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Czy planowany jest rozwój sieci/otwarcie kolejnych lokali?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jakie są warunki umowy najmu (długość, wysokość czynszu, indeksacja)?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Czy firma inwestuje w technologię (systemy POS, zamówienia online)?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Jaka jest polityka cenowa wobec rosnących kosztów żywności i energii?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Czy firma korzysta z programów lojalnościowych i marketingu cyfrowego?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jak zarządzane są straty i marnotrawstwo żywności?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Czy lokal spełnia bieżące wymogi sanitarne i ma aktualne ubezpieczenie?",
+          "isDone": false
+        },
+        {
+          "id": "c13",
+          "question": "Czy planowana jest dywersyfikacja działalności (catering, dark kitchen)?",
+          "isDone": false
+        }
+      ]
+    },
+    {
+      "id": "p8",
+      "pkd": "69.10.Z",
+      "name": "Działalność prawnicza",
+      "description": "Sektor obejmuje świadczenie usług prawnych przez kancelarie adwokackie, radcowskie i inne podmioty doradztwa prawnego - od obsługi korporacyjnej przedsiębiorstw, przez prawo cywilne i sądowe, po wyspecjalizowane nisze (np. masowe spory frankowe).",
+      "businessModel": "Model biznesowy opiera się na rozliczeniu czasu pracy prawników (stawki godzinowe), ryczałtach za stałą obsługę lub wynagrodzeniu za sukces (success fee), popularnym zwłaszcza w sporach zbiorowych. Rynek jest wysoce rozdrobniony - obok kilkuset dużych i średnich kancelarii korporacyjnych funkcjonują tysiące jedno- i kilkuosobowych praktyk indywidualnych, a bariery wejścia do zawodu są relatywnie niskie po zdanych egzaminach zawodowych. W ostatnich latach pojawiło się zjawisko szybko rosnących kancelarii wyspecjalizowanych w wąskich, powtarzalnych sprawach, zatrudniających głównie młodszych prawników do ustandaryzowanych procesów. Rosnąca liczba prawników na rynku przy relatywnie stabilnym popycie zwiększa konkurencję, choć ceny usług prawnych - wbrew intuicji - nie spadają, a coraz większą rolę odgrywają narzędzia cyfrowe i AI wspierające pracę prawników.",
+      "costDrivers": [
+        "Wynagrodzenia prawników i personelu wspierającego",
+        "Koszty pozyskania i utrzymania talentów (partnerzy, seniorzy)",
+        "Czynsz za biura (zwłaszcza w prestiżowych lokalizacjach)",
+        "Ubezpieczenia OC zawodowego",
+        "Koszty systemów IT, baz danych prawnych i narzędzi AI"
+      ],
+      "revenueDrivers": [
+        "Stawki godzinowe (rozliczenia z korporacjami)",
+        "Stała obsługa prawna (retainer)",
+        "Success fee w sporach sądowych/zbiorowych",
+        "Obsługa transakcyjna (M&A, nieruchomości)",
+        "Doradztwo regulacyjne i compliance"
+      ],
+      "keyKPIs": [
+        {
+          "label": "Stawka godzinowa (rate)",
+          "value": "PLN/h"
+        },
+        {
+          "label": "Wskaźnik wykorzystania czasu pracy (utilization rate)",
+          "value": "%"
+        },
+        {
+          "label": "Wskaźnik realizacji (realization rate)",
+          "value": "%"
+        },
+        {
+          "label": "Liczba aktywnych spraw/klientów",
+          "value": "szt."
+        },
+        {
+          "label": "Przychód na prawnika (revenue per lawyer)",
+          "value": "PLN"
+        },
+        {
+          "label": "Koncentracja top klientów w przychodach",
+          "value": "%"
+        },
+        {
+          "label": "Rotacja prawników",
+          "value": "%"
+        }
+      ],
+      "funFacts": [
+        "Liczba radców prawnych w Polsce systematycznie rośnie - z ok. 34,6 tys. w 2013 r. do ponad 52,7 tys. w 2023 r.",
+        "Rocznie na rynek pracy wchodzi ok. 5 tys. nowych radców prawnych i adwokatów.",
+        "Na polskim rynku pojawiły się kilkudziesięcioosobowe kancelarie wyspecjalizowane niemal wyłącznie w obsłudze sporów kredytobiorców frankowych z bankami, budujące skalę dzięki powtarzalności procesów."
+      ],
+      "checklist": [
+        {
+          "id": "c1",
+          "question": "Jaka jest struktura przychodów (stawki godzinowe vs ryczałt vs success fee)?",
+          "isDone": false
+        },
+        {
+          "id": "c2",
+          "question": "Jaka jest koncentracja klientów (udział największych klientów w przychodach)?",
+          "isDone": false
+        },
+        {
+          "id": "c3",
+          "question": "W jakich obszarach prawa specjalizuje się kancelaria?",
+          "isDone": false
+        },
+        {
+          "id": "c4",
+          "question": "Jaki jest poziom wykorzystania czasu pracy prawników (utilization rate)?",
+          "isDone": false
+        },
+        {
+          "id": "c5",
+          "question": "Jaka jest polityka wynagrodzeń i retencji kluczowych prawników/partnerów?",
+          "isDone": false
+        },
+        {
+          "id": "c6",
+          "question": "Czy kancelaria inwestuje w narzędzia cyfrowe/AI wspierające pracę prawną?",
+          "isDone": false
+        },
+        {
+          "id": "c7",
+          "question": "Jaka jest struktura właścicielska (spółka partnerska, liczba wspólników)?",
+          "isDone": false
+        },
+        {
+          "id": "c8",
+          "question": "Jak zarządzane jest ryzyko koncentracji na jednej niszy (np. sprawy frankowe)?",
+          "isDone": false
+        },
+        {
+          "id": "c9",
+          "question": "Czy istnieje plan sukcesji/następstwa pokoleniowego w kancelarii?",
+          "isDone": false
+        },
+        {
+          "id": "c10",
+          "question": "Jaki jest poziom należności i cykl inkasa honorariów?",
+          "isDone": false
+        },
+        {
+          "id": "c11",
+          "question": "Jaka jest historia roszczeń z polisy OC zawodowego?",
+          "isDone": false
+        },
+        {
+          "id": "c12",
+          "question": "Czy kancelaria obsługuje klientów zagranicznych/działa na rynkach międzynarodowych?",
+          "isDone": false
+        }
+      ]
     }
   ],
   "topEmitters": [
